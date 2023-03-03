@@ -1,0 +1,2969 @@
+@prefix : <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#> .
+
+<http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology> rdf:type owl:Ontology ;
+                                                                                        rdfs:comment "This Demonstration Environments ontology is developed by Nie Wei a MPhil student at the Institute for Manufacturing, University of Cambridge. Email: wn230@cam.ac.uk"@cam.ac.uk ,
+                                                                                                     "An Ontology that define and characterise Demonstration Environments from application domains, characteristics, network components and value measurements." ;
+                                                                                        owl:versionInfo 1.0 .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.w3.org/2004/02/skos/core#altLabel
+<http://www.w3.org/2004/02/skos/core#altLabel> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Applies
+:Applies rdf:type owl:ObjectProperty ;
+         owl:inverseOf :isAppliedin ;
+         rdfs:domain :ApplicationDomain ;
+         rdfs:range :DemonstrationEnvironment .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#SizeComparison
+:SizeComparison rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :hasValue ;
+                rdfs:domain :SizeScale ;
+                rdfs:range :SizeScale .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#hasActor
+:hasActor rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :hasComponent ;
+          owl:inverseOf :isActorOf ;
+          rdfs:domain :DemonstrationEnvironment ;
+          rdfs:range <http://xmlns.com/foaf/0.1/Agent> .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#hasCharacteristic
+:hasCharacteristic rdf:type owl:ObjectProperty ;
+                   owl:inverseOf :isCharacteristicOf ;
+                   rdfs:domain :DemonstrationEnvironment ;
+                   rdfs:range :Characteristics .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#hasComponent
+:hasComponent rdf:type owl:ObjectProperty ;
+              owl:inverseOf :isComponentOf ;
+              rdfs:range :Component .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#hasEnvironment
+:hasEnvironment rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :hasComponent ;
+                owl:inverseOf :isEnvironmentOf ;
+                rdfs:domain :DemonstrationEnvironment ;
+                rdfs:range :Environment .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#hasLifespan
+:hasLifespan rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :hasValue ;
+             owl:inverseOf :isLifespanOf ;
+             rdfs:domain :DemonstrationEnvironment ;
+             rdfs:range :Lifespan .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#hasMaturity
+:hasMaturity rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :hasValue ;
+             owl:inverseOf :isMaturityOf ;
+             rdfs:domain :DemonstrationEnvironment ;
+             rdfs:range :TargetMaturity .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#hasObjective
+:hasObjective rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :hasComponent ;
+              owl:inverseOf :isObjectiveOf ;
+              rdfs:domain :DemonstrationEnvironment ;
+              rdfs:range :Objective .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#hasOutcome
+:hasOutcome rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :hasComponent ;
+            owl:inverseOf :isOutcomeOf ;
+            rdfs:domain :DemonstrationEnvironment ;
+            rdfs:range :Outcome .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#hasProcessCharacteristic
+:hasProcessCharacteristic rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf :hasCharacteristic ;
+                          owl:inverseOf :isProcessCharacteristicOf ;
+                          rdfs:domain :DemonstrationEnvironment ;
+                          rdfs:range :Process .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#hasRequirementCharacteristic
+:hasRequirementCharacteristic rdf:type owl:ObjectProperty ;
+                              rdfs:subPropertyOf :hasCharacteristic ;
+                              owl:inverseOf :isRequirementCharacteristicOf ;
+                              rdfs:domain :DemonstrationEnvironment ;
+                              rdfs:range :Requirement .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#hasSizeScale
+:hasSizeScale rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :hasValue ;
+              owl:inverseOf :isSizeScaleOf ;
+              rdfs:domain :DemonstrationEnvironment ;
+              rdfs:range :SizeScale .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#hasStateCharacteristic
+:hasStateCharacteristic rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf :hasCharacteristic ;
+                        owl:inverseOf :isStateCharacteristicOf ;
+                        rdfs:domain :DemonstrationEnvironment ;
+                        rdfs:range :State .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#hasTool
+:hasTool rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf :hasComponent ;
+         owl:inverseOf :isToolOf ;
+         rdfs:domain :DemonstrationEnvironment ;
+         rdfs:range <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Tool&Facility> .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#hasValue
+:hasValue rdf:type owl:ObjectProperty ;
+          owl:inverseOf :isValueOf ;
+          rdfs:domain :DemonstrationEnvironment ;
+          rdfs:range :ValuePartition .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#isActorOf
+:isActorOf rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :isComponentOf ;
+           rdfs:domain <http://xmlns.com/foaf/0.1/Agent> ;
+           rdfs:range :DemonstrationEnvironment .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#isAppliedin
+:isAppliedin rdf:type owl:ObjectProperty ;
+             rdfs:domain :DemonstrationEnvironment ;
+             rdfs:range :ApplicationDomain .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#isCharacteristicOf
+:isCharacteristicOf rdf:type owl:ObjectProperty ;
+                    rdfs:domain :Characteristics ;
+                    rdfs:range :DemonstrationEnvironment .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#isComponentOf
+:isComponentOf rdf:type owl:ObjectProperty ;
+               rdfs:domain :Component ;
+               rdfs:range :DemonstrationEnvironment .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#isEnvironmentOf
+:isEnvironmentOf rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf :isComponentOf ;
+                 rdfs:domain :Environment ;
+                 rdfs:range :DemonstrationEnvironment .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#isInitiatedBy
+:isInitiatedBy rdf:type owl:ObjectProperty ;
+               rdfs:domain :DemonstrationEnvironment .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#isLargerThan
+:isLargerThan rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :SizeComparison ;
+              owl:inverseOf :isSmallerThan ;
+              rdf:type owl:TransitiveProperty ;
+              rdfs:domain :SizeScale ;
+              rdfs:range :SizeScale .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#isLifespanOf
+:isLifespanOf rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :isValueOf ;
+              rdfs:domain :Lifespan ;
+              rdfs:range :DemonstrationEnvironment .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#isMaturityOf
+:isMaturityOf rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :isValueOf ;
+              rdfs:domain :TargetMaturity ;
+              rdfs:range :DemonstrationEnvironment .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#isObjectiveOf
+:isObjectiveOf rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :isComponentOf ;
+               rdfs:domain :Objective ;
+               rdfs:range :DemonstrationEnvironment .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#isOutcomeOf
+:isOutcomeOf rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :isComponentOf ;
+             rdfs:domain :Outcome ;
+             rdfs:range :DemonstrationEnvironment .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#isProcessCharacteristicOf
+:isProcessCharacteristicOf rdf:type owl:ObjectProperty ;
+                           rdfs:subPropertyOf :isCharacteristicOf ;
+                           rdfs:domain :Process ;
+                           rdfs:range :DemonstrationEnvironment .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#isRequirementCharacteristicOf
+:isRequirementCharacteristicOf rdf:type owl:ObjectProperty ;
+                               rdfs:subPropertyOf :isCharacteristicOf ;
+                               rdfs:domain :Requirement ;
+                               rdfs:range :DemonstrationEnvironment .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#isSizeScaleOf
+:isSizeScaleOf rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :isValueOf ;
+               rdfs:domain :SizeScale ;
+               rdfs:range :DemonstrationEnvironment .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#isSmallerThan
+:isSmallerThan rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :SizeComparison ;
+               rdf:type owl:TransitiveProperty ;
+               rdfs:domain :SizeScale ;
+               rdfs:range :SizeScale .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#isStateCharacteristicOf
+:isStateCharacteristicOf rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf :isCharacteristicOf ;
+                         rdfs:domain :State ;
+                         rdfs:range :DemonstrationEnvironment .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#isToolOf
+:isToolOf rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :isComponentOf ;
+          rdfs:domain <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Tool&Facility> ;
+          rdfs:range :DemonstrationEnvironment .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#isValueOf
+:isValueOf rdf:type owl:ObjectProperty ;
+           rdfs:domain :ValuePartition ;
+           rdfs:range :DemonstrationEnvironment .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#ForSize
+:ForSize rdf:type owl:DatatypeProperty ;
+         rdfs:domain :SizeScale ;
+         rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#ForTime
+:ForTime rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Lifespan ;
+         rdfs:range xsd:float .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#ApplicationDomain
+:ApplicationDomain rdf:type owl:Class ;
+                   rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                     owl:onProperty :Applies ;
+                                     owl:allValuesFrom :DemonstrationEnvironment
+                                   ] ;
+                   rdfs:comment "Describes the common application domains of Demonstration Environments" .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Bench-scale
+:Bench-scale rdf:type owl:Class ;
+             rdfs:subClassOf :Named ,
+                             :Small-scale ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :isSmallerThan ;
+                               owl:someValuesFrom :Pilot-scale
+                             ] ;
+             owl:disjointWith :Commercial-scale ,
+                              :Demonstration-scale ,
+                              :Full-scale ,
+                              :Industrial-scale ,
+                              :Pilot-scale ,
+                              :Production-scale .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Biochemistry
+:Biochemistry rdf:type owl:Class ;
+              rdfs:subClassOf :ApplicationDomain ;
+              rdfs:label "Biochemistry" .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Characteristics
+:Characteristics rdf:type owl:Class ;
+                 rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                   owl:onProperty :isCharacteristicOf ;
+                                   owl:allValuesFrom :DemonstrationEnvironment
+                                 ] ;
+                 rdfs:comment "Defines all types of characteristics to describe the DE" .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Commercial-scale
+:Commercial-scale rdf:type owl:Class ;
+                  owl:equivalentClass :Full-scale ,
+                                      :Production-scale ;
+                  rdfs:subClassOf :Named ;
+                  owl:disjointWith :Demonstration-scale ,
+                                   :Laboratory-scale ,
+                                   :Pilot-scale .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Community
+:Community rdf:type owl:Class ;
+           rdfs:subClassOf :InformalOrganization .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Component
+:Component rdf:type owl:Class ;
+           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                             owl:onProperty :isComponentOf ;
+                             owl:allValuesFrom :DemonstrationEnvironment
+                           ] ;
+           rdfs:comment "Defines the network component surrounding the DEs" .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#ComputerScience
+:ComputerScience rdf:type owl:Class ;
+                 rdfs:subClassOf :ApplicationDomain ;
+                 rdfs:label "ComputerScience" .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Concept
+:Concept rdf:type owl:Class ;
+         rdfs:subClassOf :IntangibleOutcome .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Demonstration-scale
+:Demonstration-scale rdf:type owl:Class ;
+                     rdfs:subClassOf :Large-scale ,
+                                     :Named ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :isLargerThan ;
+                                       owl:someValuesFrom :Pilot-scale
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :isSmallerThan ;
+                                       owl:someValuesFrom :Commercial-scale
+                                     ] ;
+                     owl:disjointWith :Laboratory-scale ,
+                                      :Pilot-scale ,
+                                      :Production-scale .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#DemonstrationEnvironment
+:DemonstrationEnvironment rdf:type owl:Class ;
+                          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                            owl:onProperty :hasCharacteristic ;
+                                            owl:allValuesFrom :Characteristics
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty :hasComponent ;
+                                            owl:allValuesFrom :Component
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty :hasValue ;
+                                            owl:allValuesFrom :ValuePartition
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty :isAppliedin ;
+                                            owl:allValuesFrom :ApplicationDomain
+                                          ] ;
+                          rdfs:comment "This class defines different named DEs" .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#DemonstrationPlant
+:DemonstrationPlant rdf:type owl:Class ;
+                    rdfs:subClassOf :DemonstrationEnvironment ,
+                                    [ rdf:type owl:Class ;
+                                      owl:complementOf [ rdf:type owl:Restriction ;
+                                                         owl:onProperty :hasStateCharacteristic ;
+                                                         owl:someValuesFrom :virtual
+                                                       ]
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasActor ;
+                                      owl:someValuesFrom :Engineer
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasActor ;
+                                      owl:someValuesFrom :FormalOrganization
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasActor ;
+                                      owl:someValuesFrom :MachineOperator
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasEnvironment ;
+                                      owl:someValuesFrom :Real-lifeContext
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasProcessCharacteristic ;
+                                      owl:someValuesFrom :controlled
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasRequirementCharacteristic ;
+                                      owl:someValuesFrom :reliable
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasRequirementCharacteristic ;
+                                      owl:someValuesFrom :steady
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasSizeScale ;
+                                      owl:someValuesFrom :Named
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasStateCharacteristic ;
+                                      owl:someValuesFrom :continuous
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasStateCharacteristic ;
+                                      owl:someValuesFrom :industrial
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasStateCharacteristic ;
+                                      owl:someValuesFrom :physical
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasTool ;
+                                      owl:someValuesFrom :Machinery
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :isAppliedin ;
+                                      owl:someValuesFrom [ rdf:type owl:Class ;
+                                                           owl:unionOf ( :Biochemistry
+                                                                         :Engineering
+                                                                         :EnvironmentStudy
+                                                                         <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Energy&Fuels>
+                                                                       )
+                                                         ]
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasLifespan ;
+                                      owl:allValuesFrom [ rdf:type owl:Class ;
+                                                          owl:unionOf ( :Medium-term
+                                                                        :Short-term
+                                                                      )
+                                                        ]
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasMaturity ;
+                                      owl:allValuesFrom :Mature
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasObjective ;
+                                      owl:allValuesFrom <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Validation&Verification>
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasOutcome ;
+                                      owl:allValuesFrom [ rdf:type owl:Class ;
+                                                          owl:unionOf ( :IntellectualPropertyRight
+                                                                        :Product
+                                                                        :Solution
+                                                                      )
+                                                        ]
+                                    ] ,
+                                    [ rdf:type owl:Restriction ;
+                                      owl:onProperty :hasSizeScale ;
+                                      owl:allValuesFrom :Demonstration-scale
+                                    ] ;
+                    rdfs:label "Demonstration Plant" .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Design
+:Design rdf:type owl:Class ;
+        rdfs:subClassOf :TangibleOutcome .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Developer
+:Developer rdf:type owl:Class ;
+           rdfs:subClassOf <http://xmlns.com/foaf/0.1/Person> .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Education
+:Education rdf:type owl:Class ;
+           rdfs:subClassOf :ApplicationDomain ;
+           rdfs:label "Education" .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#EducationalOrganization
+:EducationalOrganization rdf:type owl:Class ;
+                         rdfs:subClassOf :FormalOrganization .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#ElectronicDevice
+:ElectronicDevice rdf:type owl:Class ;
+                  rdfs:subClassOf <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Tool&Facility> .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Enabler-driven
+:Enabler-driven rdf:type owl:Class ;
+                rdfs:subClassOf :LivingLab ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasProcessCharacteristic ;
+                                  owl:someValuesFrom :rapid
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasRequirementCharacteristic ;
+                                  owl:someValuesFrom :rapid
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasStateCharacteristic ;
+                                  owl:someValuesFrom :societal
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasStateCharacteristic ;
+                                  owl:someValuesFrom :territorial
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasLifespan ;
+                                  owl:allValuesFrom [ rdf:type owl:Class ;
+                                                      owl:unionOf ( :Long-term
+                                                                    :Medium-term
+                                                                    :Short-term
+                                                                  )
+                                                    ]
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasObjective ;
+                                  owl:allValuesFrom [ rdf:type owl:Class ;
+                                                      owl:unionOf ( :Innovation
+                                                                    <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Design&Development>
+                                                                  )
+                                                    ]
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasOutcome ;
+                                  owl:allValuesFrom [ rdf:type owl:Class ;
+                                                      owl:unionOf ( :Knowledge
+                                                                    :Solution
+                                                                  )
+                                                    ]
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :isInitiatedBy ;
+                                  owl:allValuesFrom :PublicOrganization
+                                ] ;
+                rdfs:label "Enabler-driven Living Lab" .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#End-user
+:End-user rdf:type owl:Class ;
+          rdfs:subClassOf <http://xmlns.com/foaf/0.1/Person> .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Engineer
+:Engineer rdf:type owl:Class ;
+          rdfs:subClassOf <http://xmlns.com/foaf/0.1/Person> .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Engineering
+:Engineering rdf:type owl:Class ;
+             rdfs:subClassOf :ApplicationDomain ;
+             rdfs:label "Engineering" .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Environment
+:Environment rdf:type owl:Class ;
+             rdfs:subClassOf :Component ;
+             rdfs:comment "Describes the set of working environments of DEs" .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#EnvironmentStudy
+:EnvironmentStudy rdf:type owl:Class ;
+                  rdfs:subClassOf :ApplicationDomain ;
+                  rdfs:label "EnvironmentStudy" .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Facilitator
+:Facilitator rdf:type owl:Class ;
+             rdfs:subClassOf <http://xmlns.com/foaf/0.1/Person> .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Finance
+:Finance rdf:type owl:Class ;
+         rdfs:subClassOf :ApplicationDomain ;
+         rdfs:label "Finance" .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#FormalOrganization
+:FormalOrganization rdf:type owl:Class ;
+                    rdfs:subClassOf <http://xmlns.com/foaf/0.1/Organization> .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Full-scale
+:Full-scale rdf:type owl:Class ;
+            owl:equivalentClass :Industrial-scale ,
+                                :Production-scale ;
+            rdfs:subClassOf :Large-scale ,
+                            :Named ;
+            owl:disjointWith :Laboratory-scale ,
+                             :Pilot-scale .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#GeneralSandbox
+:GeneralSandbox rdf:type owl:Class ;
+                rdfs:subClassOf :Sandbox ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasActor ;
+                                  owl:someValuesFrom :Developer
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasActor ;
+                                  owl:someValuesFrom :Researcher
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasProcessCharacteristic ;
+                                  owl:someValuesFrom :computerized
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasRequirementCharacteristic ;
+                                  owl:someValuesFrom :reproducible
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasStateCharacteristic ;
+                                  owl:someValuesFrom :simulated
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasStateCharacteristic ;
+                                  owl:someValuesFrom :virtual
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :isAppliedin ;
+                                  owl:someValuesFrom :ComputerScience
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :isAppliedin ;
+                                  owl:someValuesFrom :Geomorphology
+                                ] ;
+                rdfs:label "General Sandbox" .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Geomorphology
+:Geomorphology rdf:type owl:Class ;
+               rdfs:subClassOf :ApplicationDomain ;
+               rdfs:label "Geomorphology" .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#GovernmentalOrganization
+:GovernmentalOrganization rdf:type owl:Class ;
+                          rdfs:subClassOf :PublicOrganization ;
+                          owl:disjointWith :Non-governmentalOrganization .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Hatchery
+:Hatchery rdf:type owl:Class ;
+          owl:equivalentClass :Incubator ,
+                              :InnovationCenter ,
+                              :InnovationHub ,
+                              :InnovationLab ;
+          rdfs:subClassOf :DemonstrationEnvironment .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Healthcare
+:Healthcare rdf:type owl:Class ;
+            rdfs:subClassOf :ApplicationDomain ;
+            rdfs:label "Healthcare" .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Immature
+:Immature rdf:type owl:Class ;
+          rdfs:subClassOf :TargetMaturity .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Incubator
+:Incubator rdf:type owl:Class ;
+           owl:equivalentClass :InnovationCenter ,
+                               :InnovationHub ,
+                               :InnovationLab ;
+           rdfs:subClassOf :DemonstrationEnvironment .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Industrial-scale
+:Industrial-scale rdf:type owl:Class ;
+                  owl:equivalentClass :Production-scale ;
+                  rdfs:subClassOf :Named ;
+                  owl:disjointWith :Laboratory-scale ,
+                                   :Pilot-scale .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#IndustrialLivingLab
+:IndustrialLivingLab rdf:type owl:Class ;
+                     rdfs:subClassOf :Utilizer-driven ;
+                     rdfs:label "Industrial Living Lab" .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#InformalOrganization
+:InformalOrganization rdf:type owl:Class ;
+                      rdfs:subClassOf <http://xmlns.com/foaf/0.1/Organization> .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Innovation
+:Innovation rdf:type owl:Class ;
+            rdfs:subClassOf :Objective .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#InnovationCenter
+:InnovationCenter rdf:type owl:Class ;
+                  owl:equivalentClass :InnovationHub ,
+                                      :InnovationLab ;
+                  rdfs:subClassOf :DemonstrationEnvironment ;
+                  rdfs:label "Innovation Center" .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#InnovationHub
+:InnovationHub rdf:type owl:Class ;
+               owl:equivalentClass :InnovationLab ;
+               rdfs:subClassOf :DemonstrationEnvironment ;
+               rdfs:label "Innovation Hub" .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#InnovationLab
+:InnovationLab rdf:type owl:Class ;
+               rdfs:subClassOf :DemonstrationEnvironment ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasActor ;
+                                 owl:someValuesFrom :Facilitator
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasOutcome ;
+                                 owl:someValuesFrom :Product
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasOutcome ;
+                                 owl:someValuesFrom :Service
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasOutcome ;
+                                 owl:someValuesFrom :Solution
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasProcessCharacteristic ;
+                                 owl:someValuesFrom :collaborative
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasProcessCharacteristic ;
+                                 owl:someValuesFrom :facilitation
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasProcessCharacteristic ;
+                                 owl:someValuesFrom :managerial
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasProcessCharacteristic ;
+                                 owl:someValuesFrom :open_innovation
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasProcessCharacteristic ;
+                                 owl:someValuesFrom :participatory
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasProcessCharacteristic ;
+                                 owl:someValuesFrom :political
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasProcessCharacteristic ;
+                                 owl:someValuesFrom :user_empowerment
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasRequirementCharacteristic ;
+                                 owl:someValuesFrom :cultural
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasRequirementCharacteristic ;
+                                 owl:someValuesFrom :sustainable
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasSizeScale ;
+                                 owl:someValuesFrom :Small-scale
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasStateCharacteristic ;
+                                 owl:someValuesFrom :interdisciplinary
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasStateCharacteristic ;
+                                 owl:someValuesFrom :physical
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasStateCharacteristic ;
+                                 owl:someValuesFrom :societal
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasStateCharacteristic ;
+                                 owl:someValuesFrom :virtual
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :isAppliedin ;
+                                 owl:someValuesFrom :Healthcare
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :isAppliedin ;
+                                 owl:someValuesFrom :PublicAffairs
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :isAppliedin ;
+                                 owl:someValuesFrom :SustainableScience
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :isAppliedin ;
+                                 owl:someValuesFrom <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Business&Economics>
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasEnvironment ;
+                                 owl:allValuesFrom :Real-lifeContext
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasLifespan ;
+                                 owl:allValuesFrom :Short-term
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasLifespan ;
+                                 owl:allValuesFrom [ rdf:type owl:Class ;
+                                                     owl:unionOf ( :Long-term
+                                                                   :Medium-term
+                                                                   :Short-term
+                                                                 )
+                                                   ]
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasMaturity ;
+                                 owl:allValuesFrom [ rdf:type owl:Class ;
+                                                     owl:unionOf ( :Immature
+                                                                   :Semi-mature
+                                                                 )
+                                                   ]
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasObjective ;
+                                 owl:allValuesFrom [ rdf:type owl:Class ;
+                                                     owl:unionOf ( :Innovation
+                                                                   <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Design&Development>
+                                                                 )
+                                                   ]
+                               ] ;
+               rdfs:label "Innovation Lab" .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Instructor
+:Instructor rdf:type owl:Class ;
+            rdfs:subClassOf <http://xmlns.com/foaf/0.1/Person> .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#IntangibleOutcome
+:IntangibleOutcome rdf:type owl:Class ;
+                   rdfs:subClassOf :Outcome ;
+                   owl:disjointWith :TangibleOutcome .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#IntellectualPropertyRight
+:IntellectualPropertyRight rdf:type owl:Class ;
+                           rdfs:subClassOf :IntangibleOutcome .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Knowledge
+:Knowledge rdf:type owl:Class ;
+           rdfs:subClassOf :IntangibleOutcome .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Laboratory-scale
+:Laboratory-scale rdf:type owl:Class ;
+                  rdfs:subClassOf :Named ,
+                                  :Small-scale ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :isSmallerThan ;
+                                    owl:someValuesFrom :Pilot-scale
+                                  ] ;
+                  owl:disjointWith :Pilot-scale ,
+                                   :Production-scale .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Large-scale
+:Large-scale rdf:type owl:Class ;
+             rdfs:subClassOf :Sized ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :isLargerThan ;
+                               owl:allValuesFrom :Small-scale
+                             ] .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Lifespan
+:Lifespan rdf:type owl:Class ;
+          rdfs:subClassOf :ValuePartition ;
+          rdfs:comment "Defines the lifespan of DEs" .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#LivingLab
+:LivingLab rdf:type owl:Class ;
+           rdfs:subClassOf :DemonstrationEnvironment ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasProcessCharacteristic ;
+                             owl:someValuesFrom :agile
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasProcessCharacteristic ;
+                             owl:someValuesFrom :collaborative
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasProcessCharacteristic ;
+                             owl:someValuesFrom :facilitation
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasProcessCharacteristic ;
+                             owl:someValuesFrom :managerial
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasProcessCharacteristic ;
+                             owl:someValuesFrom :open_innovation
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasProcessCharacteristic ;
+                             owl:someValuesFrom :participatory
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasProcessCharacteristic ;
+                             owl:someValuesFrom :practical
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasProcessCharacteristic ;
+                             owl:someValuesFrom :user_empowerment
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasRequirementCharacteristic ;
+                             owl:someValuesFrom :sustainable
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasStateCharacteristic ;
+                             owl:someValuesFrom :inclusive
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasStateCharacteristic ;
+                             owl:someValuesFrom :interdisciplinary
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasStateCharacteristic ;
+                             owl:someValuesFrom :multi-stakeholder
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasStateCharacteristic ;
+                             owl:someValuesFrom :physical
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasStateCharacteristic ;
+                             owl:someValuesFrom :virtual
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :isAppliedin ;
+                             owl:someValuesFrom :Education
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :isAppliedin ;
+                             owl:someValuesFrom :Healthcare
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :isAppliedin ;
+                             owl:someValuesFrom :PublicAffairs
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :isAppliedin ;
+                             owl:someValuesFrom :SustainableScience
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :isAppliedin ;
+                             owl:someValuesFrom :Tourism
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :isAppliedin ;
+                             owl:someValuesFrom <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Business&Economics>
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasEnvironment ;
+                             owl:allValuesFrom :Real-lifeContext
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasMaturity ;
+                             owl:allValuesFrom [ rdf:type owl:Class ;
+                                                 owl:unionOf ( :Immature
+                                                               :Mature
+                                                               :Semi-mature
+                                                             )
+                                               ]
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasObjective ;
+                             owl:allValuesFrom [ rdf:type owl:Class ;
+                                                 owl:unionOf ( :Innovation
+                                                               <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Design&Development>
+                                                             )
+                                               ]
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasOutcome ;
+                             owl:allValuesFrom :Outcome
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasOutcome ;
+                             owl:allValuesFrom [ rdf:type owl:Class ;
+                                                 owl:unionOf ( :Concept
+                                                               :Design
+                                                               :IntellectualPropertyRight
+                                                               :Knowledge
+                                                               :Product
+                                                               :Prototype
+                                                               :Service
+                                                               :Solution
+                                                               :System
+                                                             )
+                                               ]
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :isInitiatedBy ;
+                             owl:allValuesFrom [ rdf:type owl:Class ;
+                                                 owl:unionOf ( :EducationalOrganization
+                                                               :End-user
+                                                               :PrivateSector
+                                                               :PublicOrganization
+                                                             )
+                                               ]
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasTool ;
+                             owl:hasValue :ICT_infrastructure
+                           ] ;
+           rdfs:label "Living Lab" ;
+           <http://www.w3.org/2004/02/skos/core#altLabel> "Living Laboratory, Living-Lab" .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Long-term
+:Long-term rdf:type owl:Class ;
+           rdfs:subClassOf :Lifespan .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#MachineOperator
+:MachineOperator rdf:type owl:Class ;
+                 rdfs:subClassOf <http://xmlns.com/foaf/0.1/Person> .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Machinery
+:Machinery rdf:type owl:Class ;
+           rdfs:subClassOf <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Tool&Facility> .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#MaterialsScience
+:MaterialsScience rdf:type owl:Class ;
+                  rdfs:subClassOf :ApplicationDomain ;
+                  rdfs:label "MaterialScience" .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Mature
+:Mature rdf:type owl:Class ;
+        rdfs:subClassOf :TargetMaturity .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Medium-term
+:Medium-term rdf:type owl:Class ;
+             rdfs:subClassOf :Lifespan .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Metrology
+:Metrology rdf:type owl:Class ;
+           rdfs:subClassOf :ApplicationDomain ;
+           rdfs:label "Metrology" .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Microelectronic
+:Microelectronic rdf:type owl:Class ;
+                 rdfs:subClassOf :ApplicationDomain ;
+                 rdfs:label "Microelectronic" .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#ModeledContext
+:ModeledContext rdf:type owl:Class ;
+                rdfs:subClassOf :Environment .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Named
+:Named rdf:type owl:Class ;
+       rdfs:subClassOf :SizeScale ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :isSizeScaleOf ;
+                         owl:allValuesFrom [ rdf:type owl:Class ;
+                                             owl:unionOf ( :DemonstrationPlant
+                                                           :PilotLine
+                                                           :PilotPlant
+                                                           :PilotScalePlant
+                                                           :Testbench
+                                                         )
+                                           ]
+                       ] ;
+       rdfs:comment "includes a set of named size scales that are used to describe certain DEs only" .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Non-governmentalOrganization
+:Non-governmentalOrganization rdf:type owl:Class ;
+                              rdfs:subClassOf :PublicOrganization .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Objective
+:Objective rdf:type owl:Class ;
+           rdfs:subClassOf :Component ;
+           rdfs:comment "Defines the set of objectives of using a DE" .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Outcome
+:Outcome rdf:type owl:Class ;
+         rdfs:subClassOf :Component ;
+         rdfs:comment "What is created after using a certain Demonstration Environment" .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Pilot-scale
+:Pilot-scale rdf:type owl:Class ;
+             rdfs:subClassOf :Named ,
+                             :Small-scale ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :isLargerThan ;
+                               owl:someValuesFrom :Bench-scale
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :isSmallerThan ;
+                               owl:someValuesFrom :Demonstration-scale
+                             ] ;
+             owl:disjointWith :Production-scale .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#PilotLine
+:PilotLine rdf:type owl:Class ;
+           owl:equivalentClass :PilotPlant ,
+                               :PilotScalePlant ;
+           rdfs:subClassOf :DemonstrationEnvironment ,
+                           [ rdf:type owl:Class ;
+                             owl:complementOf [ rdf:type owl:Restriction ;
+                                                owl:onProperty :hasStateCharacteristic ;
+                                                owl:someValuesFrom :virtual
+                                              ]
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasActor ;
+                             owl:someValuesFrom :Engineer
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasActor ;
+                             owl:someValuesFrom :FormalOrganization
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasActor ;
+                             owl:someValuesFrom :MachineOperator
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasProcessCharacteristic ;
+                             owl:someValuesFrom :controlled
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasRequirementCharacteristic ;
+                             owl:someValuesFrom :efficient
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasRequirementCharacteristic ;
+                             owl:someValuesFrom :reliable
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasRequirementCharacteristic ;
+                             owl:someValuesFrom :steady
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasSizeScale ;
+                             owl:someValuesFrom :Named
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasStateCharacteristic ;
+                             owl:someValuesFrom :discontinuous
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasStateCharacteristic ;
+                             owl:someValuesFrom :industrial
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasStateCharacteristic ;
+                             owl:someValuesFrom :physical
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasTool ;
+                             owl:someValuesFrom :Machinery
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :isAppliedin ;
+                             owl:someValuesFrom :MaterialsScience
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :isAppliedin ;
+                             owl:someValuesFrom [ rdf:type owl:Class ;
+                                                  owl:unionOf ( :Biochemistry
+                                                                :Engineering
+                                                                :EnvironmentStudy
+                                                                <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Energy&Fuels>
+                                                              )
+                                                ]
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasEnvironment ;
+                             owl:allValuesFrom :Semi-realisticContext
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasLifespan ;
+                             owl:allValuesFrom [ rdf:type owl:Class ;
+                                                 owl:unionOf ( :Medium-term
+                                                               :Short-term
+                                                             )
+                                               ]
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasMaturity ;
+                             owl:allValuesFrom [ rdf:type owl:Class ;
+                                                 owl:unionOf ( :Immature
+                                                               :Semi-mature
+                                                             )
+                                               ]
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasObjective ;
+                             owl:allValuesFrom [ rdf:type owl:Class ;
+                                                 owl:unionOf ( <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Assessment&Diagnosis>
+                                                               <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Education&Training>
+                                                               <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Test&Experiment>
+                                                               <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Validation&Verification>
+                                                             )
+                                               ]
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasOutcome ;
+                             owl:allValuesFrom [ rdf:type owl:Class ;
+                                                 owl:unionOf ( :IntellectualPropertyRight
+                                                               :Product
+                                                               :Solution
+                                                             )
+                                               ]
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasSizeScale ;
+                             owl:allValuesFrom :Pilot-scale
+                           ] ;
+           rdfs:label "Pilot Line" ;
+           <http://www.w3.org/2004/02/skos/core#altLabel> "Pilot-Line" .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#PilotPlant
+:PilotPlant rdf:type owl:Class ;
+            owl:equivalentClass :PilotScalePlant ;
+            rdfs:subClassOf :DemonstrationEnvironment ;
+            rdfs:label "Pilot Plant" .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#PilotScalePlant
+:PilotScalePlant rdf:type owl:Class ;
+                 rdfs:subClassOf :DemonstrationEnvironment ;
+                 rdfs:label "Pilot-scale Plant" .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#PrivateSector
+:PrivateSector rdf:type owl:Class ;
+               rdfs:subClassOf :FormalOrganization .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Process
+:Process rdf:type owl:Class ;
+         rdfs:subClassOf :Characteristics ;
+         rdfs:comment "Describes the characteristics of process for a DE" ;
+         rdfs:label "Process Characteristic" .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Product
+:Product rdf:type owl:Class ;
+         rdfs:subClassOf :TangibleOutcome .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Production-scale
+:Production-scale rdf:type owl:Class ;
+                  rdfs:subClassOf :Named .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Prototype
+:Prototype rdf:type owl:Class ;
+           rdfs:subClassOf :TangibleOutcome .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#PrototypePlant
+:PrototypePlant rdf:type owl:Class ;
+                rdfs:subClassOf :DemonstrationEnvironment ,
+                                [ rdf:type owl:Class ;
+                                  owl:complementOf [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :hasStateCharacteristic ;
+                                                     owl:someValuesFrom :virtual
+                                                   ]
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasActor ;
+                                  owl:someValuesFrom :FormalOrganization
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasActor ;
+                                  owl:someValuesFrom :MachineOperator
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasProcessCharacteristic ;
+                                  owl:someValuesFrom :controlled
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasRequirementCharacteristic ;
+                                  owl:someValuesFrom :feasible
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasStateCharacteristic ;
+                                  owl:someValuesFrom :industrial
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasStateCharacteristic ;
+                                  owl:someValuesFrom :physical
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasStateCharacteristic ;
+                                  owl:someValuesFrom :preliminary
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasTool ;
+                                  owl:someValuesFrom :Machinery
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasTool ;
+                                  owl:someValuesFrom <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Hardware&Software>
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :isAppliedin ;
+                                  owl:someValuesFrom :MaterialsScience
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :isAppliedin ;
+                                  owl:someValuesFrom :SustainableScience
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :isAppliedin ;
+                                  owl:someValuesFrom [ rdf:type owl:Class ;
+                                                       owl:unionOf ( :Biochemistry
+                                                                     :Engineering
+                                                                     :EnvironmentStudy
+                                                                     <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Energy&Fuels>
+                                                                   )
+                                                     ]
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasLifespan ;
+                                  owl:allValuesFrom [ rdf:type owl:Class ;
+                                                      owl:unionOf ( :Medium-term
+                                                                    :Short-term
+                                                                  )
+                                                    ]
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasMaturity ;
+                                  owl:allValuesFrom :Immature
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasObjective ;
+                                  owl:allValuesFrom [ rdf:type owl:Class ;
+                                                      owl:unionOf ( <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Assessment&Diagnosis>
+                                                                    <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Test&Experiment>
+                                                                    <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Validation&Verification>
+                                                                  )
+                                                    ]
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasOutcome ;
+                                  owl:allValuesFrom [ rdf:type owl:Class ;
+                                                      owl:unionOf ( :IntellectualPropertyRight
+                                                                    :Product
+                                                                    :Solution
+                                                                  )
+                                                    ]
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasSizeScale ;
+                                  owl:allValuesFrom :Small-scale
+                                ] ;
+                rdfs:label "Prototype Plant" .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#PrototypingPlatform
+:PrototypingPlatform rdf:type owl:Class ;
+                     rdfs:subClassOf :DemonstrationEnvironment ,
+                                     [ rdf:type owl:Class ;
+                                       owl:complementOf [ rdf:type owl:Restriction ;
+                                                          owl:onProperty :hasActor ;
+                                                          owl:someValuesFrom :End-user
+                                                        ]
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasActor ;
+                                       owl:someValuesFrom :Developer
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasActor ;
+                                       owl:someValuesFrom :Researcher
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasProcessCharacteristic ;
+                                       owl:someValuesFrom :computerized
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasProcessCharacteristic ;
+                                       owl:someValuesFrom :real-time
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasRequirementCharacteristic ;
+                                       owl:someValuesFrom :expandable
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasRequirementCharacteristic ;
+                                       owl:someValuesFrom :modular
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasRequirementCharacteristic ;
+                                       owl:someValuesFrom :reproducible
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasRequirementCharacteristic ;
+                                       owl:someValuesFrom :versatile
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasStateCharacteristic ;
+                                       owl:someValuesFrom :expandable
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasStateCharacteristic ;
+                                       owl:someValuesFrom :isolated
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasStateCharacteristic ;
+                                       owl:someValuesFrom :modular
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasStateCharacteristic ;
+                                       owl:someValuesFrom :open-source
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasStateCharacteristic ;
+                                       owl:someValuesFrom :programmable
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasStateCharacteristic ;
+                                       owl:someValuesFrom :virtual
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasTool ;
+                                       owl:someValuesFrom :ElectronicDevice
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasTool ;
+                                       owl:someValuesFrom <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Hardware&Software>
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :isAppliedin ;
+                                       owl:someValuesFrom :ComputerScience
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :isAppliedin ;
+                                       owl:someValuesFrom :Microelectronic
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasLifespan ;
+                                       owl:allValuesFrom [ rdf:type owl:Class ;
+                                                           owl:unionOf ( :Medium-term
+                                                                         :Short-term
+                                                                       )
+                                                         ]
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasMaturity ;
+                                       owl:allValuesFrom :Immature
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasObjective ;
+                                       owl:allValuesFrom [ rdf:type owl:Class ;
+                                                           owl:unionOf ( <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Assessment&Diagnosis>
+                                                                         <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Test&Experiment>
+                                                                         <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Validation&Verification>
+                                                                       )
+                                                         ]
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasOutcome ;
+                                       owl:allValuesFrom [ rdf:type owl:Class ;
+                                                           owl:unionOf ( :Knowledge
+                                                                         :Prototype
+                                                                         :Solution
+                                                                       )
+                                                         ]
+                                     ] ;
+                     rdfs:label "Prototyping Platform" ;
+                     <http://www.w3.org/2004/02/skos/core#altLabel> "Prototype Platform" .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Provider-driven
+:Provider-driven rdf:type owl:Class ;
+                 rdfs:subClassOf :LivingLab ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :isInitiatedBy ;
+                                   owl:someValuesFrom :EducationalOrganization
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasLifespan ;
+                                   owl:allValuesFrom [ rdf:type owl:Class ;
+                                                       owl:unionOf ( :Long-term
+                                                                     :Medium-term
+                                                                     :Short-term
+                                                                   )
+                                                     ]
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasObjective ;
+                                   owl:allValuesFrom [ rdf:type owl:Class ;
+                                                       owl:unionOf ( :Innovation
+                                                                     <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Design&Development>
+                                                                   )
+                                                     ]
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasOutcome ;
+                                   owl:allValuesFrom [ rdf:type owl:Class ;
+                                                       owl:unionOf ( :Concept
+                                                                     :Knowledge
+                                                                     :Solution
+                                                                   )
+                                                     ]
+                                 ] ;
+                 rdfs:label "Provider-driven Living Lab" .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#PublicAffairs
+:PublicAffairs rdf:type owl:Class ;
+               rdfs:subClassOf :ApplicationDomain ;
+               rdfs:label "PublicAffairs" .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#PublicOrganization
+:PublicOrganization rdf:type owl:Class ;
+                    rdfs:subClassOf :FormalOrganization .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Real-lifeContext
+:Real-lifeContext rdf:type owl:Class ;
+                  rdfs:subClassOf :Environment .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Regulator
+:Regulator rdf:type owl:Class ;
+           rdfs:subClassOf <http://xmlns.com/foaf/0.1/Person> .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#RegulatorySandbox
+:RegulatorySandbox rdf:type owl:Class ;
+                   rdfs:subClassOf :Sandbox ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasProcessCharacteristic ;
+                                     owl:someValuesFrom :facilitation
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasProcessCharacteristic ;
+                                     owl:someValuesFrom :participatory
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasStateCharacteristic ;
+                                     owl:someValuesFrom :secure
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :isAppliedin ;
+                                     owl:someValuesFrom :Finance
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :isAppliedin ;
+                                     owl:someValuesFrom :Healthcare
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :isAppliedin ;
+                                     owl:someValuesFrom <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#LegalAffairs&Regulations>
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasActor ;
+                                     owl:allValuesFrom [ rdf:type owl:Class ;
+                                                         owl:unionOf ( :Developer
+                                                                       :End-user
+                                                                       :PrivateSector
+                                                                       :PublicOrganization
+                                                                       :Regulator
+                                                                     )
+                                                       ]
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasObjective ;
+                                     owl:allValuesFrom [ rdf:type owl:Class ;
+                                                         owl:unionOf ( <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Assessment&Diagnosis>
+                                                                       <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Test&Experiment>
+                                                                     )
+                                                       ]
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasOutcome ;
+                                     owl:allValuesFrom [ rdf:type owl:Class ;
+                                                         owl:unionOf ( :Knowledge
+                                                                       :Product
+                                                                       :Solution
+                                                                     )
+                                                       ]
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasSizeScale ;
+                                     owl:allValuesFrom :Small-scale
+                                   ] ;
+                   rdfs:comment "Testing products/solutions/models under a set of rules, supervision requirements, and appropriate safeguards." ;
+                   rdfs:label "Regulatory Sandbox" .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Requirement
+:Requirement rdf:type owl:Class ;
+             rdfs:subClassOf :Characteristics ;
+             rdfs:comment "Describes the required characteristic that a DE should possess" ;
+             rdfs:label "Requirement Characteristic" .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Researcher
+:Researcher rdf:type owl:Class ;
+            rdfs:subClassOf <http://xmlns.com/foaf/0.1/Person> .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Sandbox
+:Sandbox rdf:type owl:Class ;
+         rdfs:subClassOf :DemonstrationEnvironment ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasProcessCharacteristic ;
+                           owl:someValuesFrom :controlled
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasProcessCharacteristic ;
+                           owl:someValuesFrom :illustrative
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasProcessCharacteristic ;
+                           owl:someValuesFrom :safeguarded
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasStateCharacteristic ;
+                           owl:someValuesFrom :isolated
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :isAppliedin ;
+                           owl:someValuesFrom [ rdf:type owl:Class ;
+                                                owl:unionOf ( :ComputerScience
+                                                              :Finance
+                                                              :Geomorphology
+                                                              :Healthcare
+                                                            )
+                                              ]
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasEnvironment ;
+                           owl:allValuesFrom :ModeledContext
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasLifespan ;
+                           owl:allValuesFrom [ rdf:type owl:Class ;
+                                               owl:unionOf ( :Medium-term
+                                                             :Short-term
+                                                           )
+                                             ]
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasMaturity ;
+                           owl:allValuesFrom [ rdf:type owl:Class ;
+                                               owl:unionOf ( :Immature
+                                                             :Mature
+                                                             :Semi-mature
+                                                           )
+                                             ]
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasObjective ;
+                           owl:allValuesFrom [ rdf:type owl:Class ;
+                                               owl:unionOf ( <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Assessment&Diagnosis>
+                                                             <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Test&Experiment>
+                                                             <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Validation&Verification>
+                                                           )
+                                             ]
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasOutcome ;
+                           owl:allValuesFrom [ rdf:type owl:Class ;
+                                               owl:unionOf ( :Knowledge
+                                                             :Product
+                                                             :Prototype
+                                                             :Solution
+                                                             :System
+                                                           )
+                                             ]
+                         ] .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Semi-mature
+:Semi-mature rdf:type owl:Class ;
+             rdfs:subClassOf :TargetMaturity .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Semi-realisticContext
+:Semi-realisticContext rdf:type owl:Class ;
+                       rdfs:subClassOf :Environment .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Service
+:Service rdf:type owl:Class ;
+         rdfs:subClassOf :IntangibleOutcome .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Short-term
+:Short-term rdf:type owl:Class ;
+            rdfs:subClassOf :Lifespan .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#SizeScale
+:SizeScale rdf:type owl:Class ;
+           rdfs:subClassOf :ValuePartition ;
+           rdfs:comment "Defines the size of DEs" .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Sized
+:Sized rdf:type owl:Class ;
+       rdfs:subClassOf :SizeScale ;
+       rdfs:comment "General words that describe size of a DE" .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Small-scale
+:Small-scale rdf:type owl:Class ;
+             rdfs:subClassOf :Sized ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :isSmallerThan ;
+                               owl:allValuesFrom :Large-scale
+                             ] .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#SocialLivingLab
+:SocialLivingLab rdf:type owl:Class ;
+                 rdfs:subClassOf :User-driven ;
+                 rdfs:label "Social Living Lab" .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Solution
+:Solution rdf:type owl:Class ;
+          rdfs:subClassOf :TangibleOutcome .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#State
+:State rdf:type owl:Class ;
+       rdfs:subClassOf :Characteristics ;
+       rdfs:comment "Describes the characteristics of state for a DE" ;
+       rdfs:label "State Characteristic" .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#SustainableScience
+:SustainableScience rdf:type owl:Class ;
+                    rdfs:subClassOf :ApplicationDomain ;
+                    rdfs:label "SustainableScience" .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#System
+:System rdf:type owl:Class ;
+        rdfs:subClassOf :TangibleOutcome .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#TangibleOutcome
+:TangibleOutcome rdf:type owl:Class ;
+                 rdfs:subClassOf :Outcome .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#TargetMaturity
+:TargetMaturity rdf:type owl:Class ;
+                rdfs:subClassOf :ValuePartition ;
+                rdfs:comment "Describes the maturity of target technology to be demonstrated" .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Testbed
+:Testbed rdf:type owl:Class ;
+         rdfs:subClassOf :DemonstrationEnvironment ,
+                         [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                  owl:onProperty :hasStateCharacteristic ;
+                                                  owl:someValuesFrom :heterogeneous
+                                                ]
+                                                [ rdf:type owl:Restriction ;
+                                                  owl:onProperty :isAppliedin ;
+                                                  owl:someValuesFrom :ComputerScience
+                                                ]
+                                              ) ;
+                           rdf:type owl:Class
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasActor ;
+                           owl:someValuesFrom :Developer
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasActor ;
+                           owl:someValuesFrom :Engineer
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasActor ;
+                           owl:someValuesFrom :FormalOrganization
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasActor ;
+                           owl:someValuesFrom :Researcher
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasProcessCharacteristic ;
+                           owl:someValuesFrom :computerized
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasProcessCharacteristic ;
+                           owl:someValuesFrom :controlled
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasProcessCharacteristic ;
+                           owl:someValuesFrom :emulation
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasProcessCharacteristic ;
+                           owl:someValuesFrom :participatory
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasProcessCharacteristic ;
+                           owl:someValuesFrom :real-time
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasProcessCharacteristic ;
+                           owl:someValuesFrom :realistic
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasProcessCharacteristic ;
+                           owl:someValuesFrom :safeguarded
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasProcessCharacteristic ;
+                           owl:someValuesFrom :transparent
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasRequirementCharacteristic ;
+                           owl:someValuesFrom :efficient
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasRequirementCharacteristic ;
+                           owl:someValuesFrom :expandable
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasRequirementCharacteristic ;
+                           owl:someValuesFrom :federated
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasRequirementCharacteristic ;
+                           owl:someValuesFrom :high-fidelity
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasRequirementCharacteristic ;
+                           owl:someValuesFrom :interoperable
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasRequirementCharacteristic ;
+                           owl:someValuesFrom :locomotive
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasRequirementCharacteristic ;
+                           owl:someValuesFrom :low-cost
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasRequirementCharacteristic ;
+                           owl:someValuesFrom :maneuverable
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasRequirementCharacteristic ;
+                           owl:someValuesFrom :reproducible
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasRequirementCharacteristic ;
+                           owl:someValuesFrom :scalable
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasRequirementCharacteristic ;
+                           owl:someValuesFrom :secure
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasRequirementCharacteristic ;
+                           owl:someValuesFrom :viable
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasStateCharacteristic ;
+                           owl:someValuesFrom :expandable
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasStateCharacteristic ;
+                           owl:someValuesFrom :federated
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasStateCharacteristic ;
+                           owl:someValuesFrom :isolated
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasStateCharacteristic ;
+                           owl:someValuesFrom :modular
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasStateCharacteristic ;
+                           owl:someValuesFrom :open-source
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasStateCharacteristic ;
+                           owl:someValuesFrom :physical
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasStateCharacteristic ;
+                           owl:someValuesFrom :portable
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasStateCharacteristic ;
+                           owl:someValuesFrom :programmable
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasStateCharacteristic ;
+                           owl:someValuesFrom :realistic
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasStateCharacteristic ;
+                           owl:someValuesFrom :simulated
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasStateCharacteristic ;
+                           owl:someValuesFrom :virtual
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasTool ;
+                           owl:someValuesFrom <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Hardware&Software>
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :isAppliedin ;
+                           owl:someValuesFrom :ComputerScience
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :isAppliedin ;
+                           owl:someValuesFrom :Engineering
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :isAppliedin ;
+                           owl:someValuesFrom :Microelectronic
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasEnvironment ;
+                           owl:allValuesFrom :ModeledContext
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasLifespan ;
+                           owl:allValuesFrom [ rdf:type owl:Class ;
+                                               owl:unionOf ( :Medium-term
+                                                             :Short-term
+                                                           )
+                                             ]
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasMaturity ;
+                           owl:allValuesFrom [ rdf:type owl:Class ;
+                                               owl:unionOf ( :Immature
+                                                             :Semi-mature
+                                                           )
+                                             ]
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasObjective ;
+                           owl:allValuesFrom [ rdf:type owl:Class ;
+                                               owl:unionOf ( <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Assessment&Diagnosis>
+                                                             <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Education&Training>
+                                                             <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Test&Experiment>
+                                                             <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Validation&Verification>
+                                                           )
+                                             ]
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasOutcome ;
+                           owl:allValuesFrom [ rdf:type owl:Class ;
+                                               owl:unionOf ( :Knowledge
+                                                             :Prototype
+                                                             :Solution
+                                                             :System
+                                                           )
+                                             ]
+                         ] ;
+         <http://www.w3.org/2004/02/skos/core#altLabel> "Test Bed" ,
+                                                        "Test-bed" .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Testbench
+:Testbench rdf:type owl:Class ;
+           rdfs:subClassOf :DemonstrationEnvironment ,
+                           [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :hasActor ;
+                                                    owl:someValuesFrom :Developer
+                                                  ]
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :isAppliedin ;
+                                                    owl:allValuesFrom [ rdf:type owl:Class ;
+                                                                        owl:unionOf ( :ComputerScience
+                                                                                      :Engineering
+                                                                                    )
+                                                                      ]
+                                                  ]
+                                                ) ;
+                             rdf:type owl:Class
+                           ] ,
+                           [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :hasProcessCharacteristic ;
+                                                    owl:someValuesFrom :real-time
+                                                  ]
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :isAppliedin ;
+                                                    owl:allValuesFrom [ rdf:type owl:Class ;
+                                                                        owl:unionOf ( :ComputerScience
+                                                                                      :Engineering
+                                                                                    )
+                                                                      ]
+                                                  ]
+                                                ) ;
+                             rdf:type owl:Class
+                           ] ,
+                           [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :hasRequirementCharacteristic ;
+                                                    owl:someValuesFrom :reproducible
+                                                  ]
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :isAppliedin ;
+                                                    owl:allValuesFrom [ rdf:type owl:Class ;
+                                                                        owl:unionOf ( :ComputerScience
+                                                                                      :Engineering
+                                                                                    )
+                                                                      ]
+                                                  ]
+                                                ) ;
+                             rdf:type owl:Class
+                           ] ,
+                           [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :hasStateCharacteristic ;
+                                                    owl:someValuesFrom :programmable
+                                                  ]
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :isAppliedin ;
+                                                    owl:allValuesFrom [ rdf:type owl:Class ;
+                                                                        owl:unionOf ( :ComputerScience
+                                                                                      :Engineering
+                                                                                    )
+                                                                      ]
+                                                  ]
+                                                ) ;
+                             rdf:type owl:Class
+                           ] ,
+                           [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :hasStateCharacteristic ;
+                                                    owl:someValuesFrom :realistic
+                                                  ]
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :isAppliedin ;
+                                                    owl:allValuesFrom [ rdf:type owl:Class ;
+                                                                        owl:unionOf ( :ComputerScience
+                                                                                      :Engineering
+                                                                                    )
+                                                                      ]
+                                                  ]
+                                                ) ;
+                             rdf:type owl:Class
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasActor ;
+                             owl:someValuesFrom :Engineer
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasActor ;
+                             owl:someValuesFrom :FormalOrganization
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasActor ;
+                             owl:someValuesFrom :Researcher
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasRequirementCharacteristic ;
+                             owl:someValuesFrom :low-cost
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasSizeScale ;
+                             owl:someValuesFrom :Named
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasStateCharacteristic ;
+                             owl:someValuesFrom :portable
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasStateCharacteristic ;
+                             owl:someValuesFrom :preliminary
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasTool ;
+                             owl:someValuesFrom <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Hardware&Software>
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :isAppliedin ;
+                             owl:someValuesFrom :Biochemistry
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :isAppliedin ;
+                             owl:someValuesFrom :ComputerScience
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :isAppliedin ;
+                             owl:someValuesFrom :Engineering
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :isAppliedin ;
+                             owl:someValuesFrom :Metrology
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :isAppliedin ;
+                             owl:someValuesFrom :Microelectronic
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :isAppliedin ;
+                             owl:someValuesFrom <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Energy&Fuels>
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasEnvironment ;
+                             owl:allValuesFrom :ModeledContext
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasLifespan ;
+                             owl:allValuesFrom [ rdf:type owl:Class ;
+                                                 owl:unionOf ( :Medium-term
+                                                               :Short-term
+                                                             )
+                                               ]
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasMaturity ;
+                             owl:allValuesFrom [ rdf:type owl:Class ;
+                                                 owl:unionOf ( :Immature
+                                                               :Semi-mature
+                                                             )
+                                               ]
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasObjective ;
+                             owl:allValuesFrom [ rdf:type owl:Class ;
+                                                 owl:unionOf ( <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Assessment&Diagnosis>
+                                                               <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Test&Experiment>
+                                                               <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Validation&Verification>
+                                                             )
+                                               ]
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasOutcome ;
+                             owl:allValuesFrom [ rdf:type owl:Class ;
+                                                 owl:unionOf ( :Design
+                                                               :IntellectualPropertyRight
+                                                               :Knowledge
+                                                               :Prototype
+                                                               :Solution
+                                                             )
+                                               ]
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasSizeScale ;
+                             owl:allValuesFrom :Bench-scale
+                           ] ;
+           rdfs:comment "Also known as the verification environment or testing workbench" ;
+           <http://www.w3.org/2004/02/skos/core#altLabel> "Test bench, Test-bench" .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Tourism
+:Tourism rdf:type owl:Class ;
+         rdfs:subClassOf :ApplicationDomain ;
+         rdfs:label "Tourism" .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#UrbanLivingLab
+:UrbanLivingLab rdf:type owl:Class ;
+                rdfs:subClassOf :Enabler-driven ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasProcessCharacteristic ;
+                                  owl:someValuesFrom :governance
+                                ] ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :hasStateCharacteristic ;
+                                  owl:someValuesFrom :political
+                                ] ;
+                rdfs:label "Urban Living Lab" .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#User-driven
+:User-driven rdf:type owl:Class ;
+             rdfs:subClassOf :LivingLab ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasProcessCharacteristic ;
+                               owl:someValuesFrom :informal
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasStateCharacteristic ;
+                               owl:someValuesFrom :territorial
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasLifespan ;
+                               owl:allValuesFrom :Long-term
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasObjective ;
+                               owl:allValuesFrom [ owl:intersectionOf ( :Innovation
+                                                                        <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Design&Development>
+                                                                      ) ;
+                                                   rdf:type owl:Class
+                                                 ]
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasOutcome ;
+                               owl:allValuesFrom :Solution
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :isInitiatedBy ;
+                               owl:allValuesFrom [ rdf:type owl:Class ;
+                                                   owl:unionOf ( :Community
+                                                                 :End-user
+                                                               )
+                                                 ]
+                             ] ;
+             rdfs:label "User-driven Living Lab" .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Utilizer-driven
+:Utilizer-driven rdf:type owl:Class ;
+                 rdfs:subClassOf :LivingLab ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasProcessCharacteristic ;
+                                   owl:someValuesFrom :rapid
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasRequirementCharacteristic ;
+                                   owl:someValuesFrom :rapid
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasLifespan ;
+                                   owl:allValuesFrom :Short-term
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasObjective ;
+                                   owl:allValuesFrom [ rdf:type owl:Class ;
+                                                       owl:unionOf ( <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Design&Development>
+                                                                     <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Validation&Verification>
+                                                                   )
+                                                     ]
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :hasOutcome ;
+                                   owl:allValuesFrom [ rdf:type owl:Class ;
+                                                       owl:unionOf ( :Design
+                                                                     :IntellectualPropertyRight
+                                                                     :Knowledge
+                                                                     :Product
+                                                                     :Prototype
+                                                                     :Service
+                                                                     :Solution
+                                                                     :System
+                                                                   )
+                                                     ]
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty :isInitiatedBy ;
+                                   owl:allValuesFrom :PrivateSector
+                                 ] ;
+                 rdfs:label "Utilizer-driven Living Lab" .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#ValuePartition
+:ValuePartition rdf:type owl:Class ;
+                rdfs:comment "Defines a set of value scales that are used to describe the DE" .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#agile
+:agile rdf:type owl:Class ;
+       rdfs:subClassOf :Process .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#collaborative
+:collaborative rdf:type owl:Class ;
+               rdfs:subClassOf :Process .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#computerized
+:computerized rdf:type owl:Class ;
+              rdfs:subClassOf :Process .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#continuous
+:continuous rdf:type owl:Class ;
+            rdfs:subClassOf :Process ;
+            owl:disjointWith :discontinuous .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#controlled
+:controlled rdf:type owl:Class ;
+            rdfs:subClassOf :Process .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#cultural
+:cultural rdf:type owl:Class ;
+          rdfs:subClassOf :Requirement .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#discontinuous
+:discontinuous rdf:type owl:Class ;
+               rdfs:subClassOf :Process .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#efficient
+:efficient rdf:type owl:Class ;
+           rdfs:subClassOf :Requirement .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#emulation
+:emulation rdf:type owl:Class ;
+           rdfs:subClassOf :Process .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#expandable
+:expandable rdf:type owl:Class ;
+            rdfs:subClassOf :Requirement ,
+                            :State .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#facilitation
+:facilitation rdf:type owl:Class ;
+              rdfs:subClassOf :Process .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#feasible
+:feasible rdf:type owl:Class ;
+          rdfs:subClassOf :Requirement .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#federated
+:federated rdf:type owl:Class ;
+           rdfs:subClassOf :Requirement ,
+                           :State .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#governance
+:governance rdf:type owl:Class ;
+            rdfs:subClassOf :Process .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#heterogeneous
+:heterogeneous rdf:type owl:Class ;
+               rdfs:subClassOf :State .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#high-fidelity
+:high-fidelity rdf:type owl:Class ;
+               rdfs:subClassOf :Requirement .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#illustrative
+:illustrative rdf:type owl:Class ;
+              rdfs:subClassOf :Process .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#inclusive
+:inclusive rdf:type owl:Class ;
+           rdfs:subClassOf :State .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#industrial
+:industrial rdf:type owl:Class ;
+            rdfs:subClassOf :State .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#informal
+:informal rdf:type owl:Class ;
+          rdfs:subClassOf :Process .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#interdisciplinary
+:interdisciplinary rdf:type owl:Class ;
+                   rdfs:subClassOf :State .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#interoperable
+:interoperable rdf:type owl:Class ;
+               rdfs:subClassOf :Requirement ,
+                               :State .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#isolated
+:isolated rdf:type owl:Class ;
+          rdfs:subClassOf :State .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#locomotive
+:locomotive rdf:type owl:Class ;
+            rdfs:subClassOf :Requirement .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#low-cost
+:low-cost rdf:type owl:Class ;
+          rdfs:subClassOf :Requirement .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#managerial
+:managerial rdf:type owl:Class ;
+            rdfs:subClassOf :Process .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#maneuverable
+:maneuverable rdf:type owl:Class ;
+              rdfs:subClassOf :Requirement .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#modular
+:modular rdf:type owl:Class ;
+         rdfs:subClassOf :Requirement ,
+                         :State .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#multi-stakeholder
+:multi-stakeholder rdf:type owl:Class ;
+                   rdfs:subClassOf :State .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#open-source
+:open-source rdf:type owl:Class ;
+             rdfs:subClassOf :State .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#open_innovation
+:open_innovation rdf:type owl:Class ;
+                 rdfs:subClassOf :Process .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#participatory
+:participatory rdf:type owl:Class ;
+               rdfs:subClassOf :Process .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#physical
+:physical rdf:type owl:Class ;
+          rdfs:subClassOf :State .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#political
+:political rdf:type owl:Class ;
+           rdfs:subClassOf :State .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#portable
+:portable rdf:type owl:Class ;
+          rdfs:subClassOf :Requirement ,
+                          :State .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#practical
+:practical rdf:type owl:Class ;
+           rdfs:subClassOf :Process ,
+                           :Requirement .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#preliminary
+:preliminary rdf:type owl:Class ;
+             rdfs:subClassOf :State .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#programmable
+:programmable rdf:type owl:Class ;
+              rdfs:subClassOf :State .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#rapid
+:rapid rdf:type owl:Class ;
+       rdfs:subClassOf :Process ,
+                       :Requirement .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#real-time
+:real-time rdf:type owl:Class ;
+           rdfs:subClassOf :Process ;
+           rdfs:comment "the process can capture real-time information/outcome from the DE" .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#realistic
+:realistic rdf:type owl:Class ;
+           rdfs:subClassOf :Requirement ,
+                           :State .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#reliable
+:reliable rdf:type owl:Class ;
+          rdfs:subClassOf :Requirement .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#reproducible
+:reproducible rdf:type owl:Class ;
+              rdfs:subClassOf :Requirement .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#safeguarded
+:safeguarded rdf:type owl:Class ;
+             rdfs:subClassOf :Process .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#scalable
+:scalable rdf:type owl:Class ;
+          rdfs:subClassOf :Requirement .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#secure
+:secure rdf:type owl:Class ;
+        rdfs:subClassOf :Requirement .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#simulated
+:simulated rdf:type owl:Class ;
+           rdfs:subClassOf :State .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#societal
+:societal rdf:type owl:Class ;
+          rdfs:subClassOf :State .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#steady
+:steady rdf:type owl:Class ;
+        rdfs:subClassOf :Requirement .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#sustainable
+:sustainable rdf:type owl:Class ;
+             rdfs:subClassOf :Requirement .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#territorial
+:territorial rdf:type owl:Class ;
+             rdfs:subClassOf :State .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#transparent
+:transparent rdf:type owl:Class ;
+             rdfs:subClassOf :Process .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#user_empowerment
+:user_empowerment rdf:type owl:Class ;
+                  rdfs:subClassOf :Process .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#versatile
+:versatile rdf:type owl:Class ;
+           rdfs:subClassOf :Requirement .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#viable
+:viable rdf:type owl:Class ;
+        rdfs:subClassOf :Requirement .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#virtual
+:virtual rdf:type owl:Class ;
+         rdfs:subClassOf :State .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Assessment&Diagnosis
+<http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Assessment&Diagnosis> rdf:type owl:Class ;
+                                                                                                            rdfs:subClassOf :Objective .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Business&Economics
+<http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Business&Economics> rdf:type owl:Class ;
+                                                                                                          rdfs:subClassOf :ApplicationDomain ;
+                                                                                                          rdfs:label "Business&Economics" .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Design&Development
+<http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Design&Development> rdf:type owl:Class ;
+                                                                                                          rdfs:subClassOf :Objective .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Education&Training
+<http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Education&Training> rdf:type owl:Class ;
+                                                                                                          rdfs:subClassOf :Objective .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Energy&Fuels
+<http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Energy&Fuels> rdf:type owl:Class ;
+                                                                                                    rdfs:subClassOf :ApplicationDomain ;
+                                                                                                    rdfs:label "Energy&Fuels" .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Hardware&Software
+<http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Hardware&Software> rdf:type owl:Class ;
+                                                                                                         rdfs:subClassOf <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Tool&Facility> .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#LegalAffairs&Regulations
+<http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#LegalAffairs&Regulations> rdf:type owl:Class ;
+                                                                                                                rdfs:subClassOf :ApplicationDomain ;
+                                                                                                                rdfs:label "LegalAffairs&Regulations" .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Test&Experiment
+<http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Test&Experiment> rdf:type owl:Class ;
+                                                                                                       rdfs:subClassOf :Objective .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Tool&Facility
+<http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Tool&Facility> rdf:type owl:Class ;
+                                                                                                     rdfs:subClassOf :Component ;
+                                                                                                     rdfs:comment "Tools and facilities used in the DEs" .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Validation&Verification
+<http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Validation&Verification> rdf:type owl:Class ;
+                                                                                                               rdfs:subClassOf :Objective ,
+                                                                                                                               [ rdf:type owl:Restriction ;
+                                                                                                                                 owl:onProperty :isObjectiveOf ;
+                                                                                                                                 owl:someValuesFrom :DemonstrationPlant
+                                                                                                                               ] ,
+                                                                                                                               [ rdf:type owl:Restriction ;
+                                                                                                                                 owl:onProperty :isObjectiveOf ;
+                                                                                                                                 owl:someValuesFrom :PrototypePlant
+                                                                                                                               ] ,
+                                                                                                                               [ rdf:type owl:Restriction ;
+                                                                                                                                 owl:onProperty :isObjectiveOf ;
+                                                                                                                                 owl:someValuesFrom :PrototypingPlatform
+                                                                                                                               ] ,
+                                                                                                                               [ rdf:type owl:Restriction ;
+                                                                                                                                 owl:onProperty :isObjectiveOf ;
+                                                                                                                                 owl:someValuesFrom :Testbench
+                                                                                                                               ] ,
+                                                                                                                               [ rdf:type owl:Restriction ;
+                                                                                                                                 owl:onProperty :isObjectiveOf ;
+                                                                                                                                 owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                                                                                      owl:unionOf ( :PilotLine
+                                                                                                                                                                    :PilotPlant
+                                                                                                                                                                    :PilotScalePlant
+                                                                                                                                                                  )
+                                                                                                                                                    ]
+                                                                                                                               ] .
+
+
+###  http://xmlns.com/foaf/0.1/Agent
+<http://xmlns.com/foaf/0.1/Agent> rdf:type owl:Class ;
+                                  rdfs:subClassOf :Component ;
+                                  rdfs:comment "Describes the set of actors involved in DE" .
+
+
+###  http://xmlns.com/foaf/0.1/Organization
+<http://xmlns.com/foaf/0.1/Organization> rdf:type owl:Class ;
+                                         rdfs:subClassOf <http://xmlns.com/foaf/0.1/Agent> .
+
+
+###  http://xmlns.com/foaf/0.1/Person
+<http://xmlns.com/foaf/0.1/Person> rdf:type owl:Class ;
+                                   rdfs:subClassOf <http://xmlns.com/foaf/0.1/Agent> .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Android
+:Android rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#App_testbench
+:App_testbench rdf:type owl:NamedIndividual ,
+                        :Testbench ;
+               :hasObjective :Malware_analysis .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Arduino
+:Arduino rdf:type owl:NamedIndividual ,
+                  :PrototypingPlatform .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Citizen
+:Citizen rdf:type owl:NamedIndividual ,
+                  :End-user .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#City
+:City rdf:type owl:NamedIndividual ,
+               :Real-lifeContext .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Converter
+:Converter rdf:type owl:NamedIndividual ,
+                    :ElectronicDevice .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Cyber-physical_hardware
+:Cyber-physical_hardware rdf:type owl:NamedIndividual ,
+                                  <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Hardware&Software> .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Cyber_security_testbed
+:Cyber_security_testbed rdf:type owl:NamedIndividual ,
+                                 :Testbed ;
+                        :hasObjective :Malware_analysis .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Demodulator
+:Demodulator rdf:type owl:NamedIndividual ,
+                      :ElectronicDevice .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Falcon_sandbox
+:Falcon_sandbox rdf:type owl:NamedIndividual ,
+                         :Sandbox ;
+                :hasObjective :Malware_analysis .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Gasifier
+:Gasifier rdf:type owl:NamedIndividual ,
+                   :Machinery .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Hobby_group
+:Hobby_group rdf:type owl:NamedIndividual ,
+                      :Community .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#ICT_infrastructure
+:ICT_infrastructure rdf:type owl:NamedIndividual ,
+                             <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Hardware&Software> .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#IOS
+:IOS rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Knowledge_creation
+:Knowledge_creation rdf:type owl:NamedIndividual ,
+                             :Innovation .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Laboratory
+:Laboratory rdf:type owl:NamedIndividual ,
+                     :ModeledContext .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Local_housing_community
+:Local_housing_community rdf:type owl:NamedIndividual ,
+                                  :Community .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Machine_operator
+:Machine_operator rdf:type owl:NamedIndividual ,
+                           :MachineOperator .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Malware_analysis
+:Malware_analysis rdf:type owl:NamedIndividual ,
+                           <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Assessment&Diagnosis> ;
+                  :isObjectiveOf :App_testbench ,
+                                 :Cyber_security_testbed ,
+                                 :Falcon_sandbox ,
+                                 :Raspberry_Pi ,
+                                 :ToR-SIM_platform ;
+                  rdfs:comment "Malware analysis is the process of understanding behaviour and purpose of a suspicious file or URL." .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#NGOs
+:NGOs rdf:type owl:NamedIndividual ,
+               :PublicOrganization .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Networking_application
+:Networking_application rdf:type owl:NamedIndividual ,
+                                 <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Hardware&Software> .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Nursing
+:Nursing rdf:type owl:NamedIndividual ,
+                  :Healthcare .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Partnership
+:Partnership rdf:type owl:NamedIndividual ,
+                      :collaborative .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Plant
+:Plant rdf:type owl:NamedIndividual ,
+                :Semi-realisticContext .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Policy
+:Policy rdf:type owl:NamedIndividual ,
+                 :Solution .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Processor
+:Processor rdf:type owl:NamedIndividual ,
+                    :ElectronicDevice .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Proof-of-concept
+:Proof-of-concept rdf:type owl:NamedIndividual ,
+                           <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Validation&Verification> .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Raspberry_Pi
+:Raspberry_Pi rdf:type owl:NamedIndividual ,
+                       :Testbed ;
+              :hasObjective :Malware_analysis .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Reactor
+:Reactor rdf:type owl:NamedIndividual ,
+                  :Machinery .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Research_institution
+:Research_institution rdf:type owl:NamedIndividual ,
+                               :EducationalOrganization .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Resident
+:Resident rdf:type owl:NamedIndividual ,
+                   :End-user .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Robotics
+:Robotics rdf:type owl:NamedIndividual ,
+                   :Machinery .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Sandbox
+:Sandbox rdf:type owl:NamedIndividual ;
+         :hasObjective :Malware_analysis .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Simulation
+:Simulation rdf:type owl:NamedIndividual ,
+                     :ModeledContext .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Software_developer
+:Software_developer rdf:type owl:NamedIndividual ,
+                             :Developer .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Steam_generator
+:Steam_generator rdf:type owl:NamedIndividual ,
+                          :Machinery .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Student
+:Student rdf:type owl:NamedIndividual ,
+                  :End-user .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Suspicious_behavior_detection
+:Suspicious_behavior_detection rdf:type owl:NamedIndividual ,
+                                        <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Assessment&Diagnosis> .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#ToR-SIM_platform
+:ToR-SIM_platform rdf:type owl:NamedIndividual ,
+                           :PrototypingPlatform ;
+                  :hasObjective :Malware_analysis .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#University
+:University rdf:type owl:NamedIndividual ,
+                     :EducationalOrganization ,
+                     :Real-lifeContext .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Viability_demonstration
+:Viability_demonstration rdf:type owl:NamedIndividual ,
+                                  <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Validation&Verification> .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Vulnerability_assessment
+:Vulnerability_assessment rdf:type owl:NamedIndividual ,
+                                   <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Assessment&Diagnosis> .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Wire_cutter
+:Wire_cutter rdf:type owl:NamedIndividual ,
+                      :ElectronicDevice .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Wireless_communication
+:Wireless_communication rdf:type owl:NamedIndividual ,
+                                 <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Hardware&Software> .
+
+
+###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#commissioning
+:commissioning rdf:type owl:NamedIndividual ,
+                        <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Test&Experiment> .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+:Sandbox rdfs:label "Sandbox" .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :Android
+                        :IOS
+                      )
+] .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
