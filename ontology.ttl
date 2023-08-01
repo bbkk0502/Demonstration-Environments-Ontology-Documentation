@@ -1,15 +1,15 @@
-@prefix : <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#> .
+@prefix : <http://purl.org/deo#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#> .
+@base <http://purl.org/deo#> .
 
-<http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology> rdf:type owl:Ontology ;
-                                                                                        rdfs:comment "This Demonstration Environments ontology is developed by Nie Wei a MPhil student at the Institute for Manufacturing, University of Cambridge. Email: wn230@cam.ac.uk"@cam.ac.uk ,
-                                                                                                     "An Ontology that define and characterise Demonstration Environments from application domains, characteristics, network components and value measurements." ;
-                                                                                        owl:versionInfo 1.0 .
+<http://purl.org/deo> rdf:type owl:Ontology ;
+                       rdfs:comment "This Demonstration Environments ontology is developed by Nie Wei a MPhil student at the Institute for Manufacturing, University of Cambridge. Email: wn230@cam.ac.uk"@cam.ac.uk ,
+                                    "An Ontology that define and characterise Demonstration Environments from application domains, characteristics, network components and value measurements." ;
+                       owl:versionInfo 1.1 .
 
 #################################################################
 #    Annotation properties
@@ -23,21 +23,21 @@
 #    Object Properties
 #################################################################
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Applies
+###  http://purl.org/deo#Applies
 :Applies rdf:type owl:ObjectProperty ;
          owl:inverseOf :isAppliedin ;
          rdfs:domain :ApplicationDomain ;
          rdfs:range :DemonstrationEnvironment .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#SizeComparison
+###  http://purl.org/deo#SizeComparison
 :SizeComparison rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf :hasValue ;
                 rdfs:domain :SizeScale ;
                 rdfs:range :SizeScale .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#hasActor
+###  http://purl.org/deo#hasActor
 :hasActor rdf:type owl:ObjectProperty ;
           rdfs:subPropertyOf :hasComponent ;
           owl:inverseOf :isActorOf ;
@@ -45,20 +45,20 @@
           rdfs:range <http://xmlns.com/foaf/0.1/Agent> .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#hasCharacteristic
+###  http://purl.org/deo#hasCharacteristic
 :hasCharacteristic rdf:type owl:ObjectProperty ;
                    owl:inverseOf :isCharacteristicOf ;
                    rdfs:domain :DemonstrationEnvironment ;
                    rdfs:range :Characteristics .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#hasComponent
+###  http://purl.org/deo#hasComponent
 :hasComponent rdf:type owl:ObjectProperty ;
               owl:inverseOf :isComponentOf ;
               rdfs:range :Component .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#hasEnvironment
+###  http://purl.org/deo#hasEnvironment
 :hasEnvironment rdf:type owl:ObjectProperty ;
                 rdfs:subPropertyOf :hasComponent ;
                 owl:inverseOf :isEnvironmentOf ;
@@ -66,7 +66,7 @@
                 rdfs:range :Environment .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#hasLifespan
+###  http://purl.org/deo#hasLifespan
 :hasLifespan rdf:type owl:ObjectProperty ;
              rdfs:subPropertyOf :hasValue ;
              owl:inverseOf :isLifespanOf ;
@@ -74,7 +74,7 @@
              rdfs:range :Lifespan .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#hasMaturity
+###  http://purl.org/deo#hasMaturity
 :hasMaturity rdf:type owl:ObjectProperty ;
              rdfs:subPropertyOf :hasValue ;
              owl:inverseOf :isMaturityOf ;
@@ -82,7 +82,7 @@
              rdfs:range :TargetMaturity .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#hasObjective
+###  http://purl.org/deo#hasObjective
 :hasObjective rdf:type owl:ObjectProperty ;
               rdfs:subPropertyOf :hasComponent ;
               owl:inverseOf :isObjectiveOf ;
@@ -90,7 +90,7 @@
               rdfs:range :Objective .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#hasOutcome
+###  http://purl.org/deo#hasOutcome
 :hasOutcome rdf:type owl:ObjectProperty ;
             rdfs:subPropertyOf :hasComponent ;
             owl:inverseOf :isOutcomeOf ;
@@ -98,7 +98,7 @@
             rdfs:range :Outcome .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#hasProcessCharacteristic
+###  http://purl.org/deo#hasProcessCharacteristic
 :hasProcessCharacteristic rdf:type owl:ObjectProperty ;
                           rdfs:subPropertyOf :hasCharacteristic ;
                           owl:inverseOf :isProcessCharacteristicOf ;
@@ -106,7 +106,7 @@
                           rdfs:range :Process .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#hasRequirementCharacteristic
+###  http://purl.org/deo#hasRequirementCharacteristic
 :hasRequirementCharacteristic rdf:type owl:ObjectProperty ;
                               rdfs:subPropertyOf :hasCharacteristic ;
                               owl:inverseOf :isRequirementCharacteristicOf ;
@@ -114,7 +114,7 @@
                               rdfs:range :Requirement .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#hasSizeScale
+###  http://purl.org/deo#hasSizeScale
 :hasSizeScale rdf:type owl:ObjectProperty ;
               rdfs:subPropertyOf :hasValue ;
               owl:inverseOf :isSizeScaleOf ;
@@ -122,7 +122,7 @@
               rdfs:range :SizeScale .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#hasStateCharacteristic
+###  http://purl.org/deo#hasStateCharacteristic
 :hasStateCharacteristic rdf:type owl:ObjectProperty ;
                         rdfs:subPropertyOf :hasCharacteristic ;
                         owl:inverseOf :isStateCharacteristicOf ;
@@ -130,59 +130,59 @@
                         rdfs:range :State .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#hasTool
+###  http://purl.org/deo#hasTool
 :hasTool rdf:type owl:ObjectProperty ;
          rdfs:subPropertyOf :hasComponent ;
          owl:inverseOf :isToolOf ;
          rdfs:domain :DemonstrationEnvironment ;
-         rdfs:range <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Tool&Facility> .
+         rdfs:range <http://purl.org/deo#Tool&Facility> .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#hasValue
+###  http://purl.org/deo#hasValue
 :hasValue rdf:type owl:ObjectProperty ;
           owl:inverseOf :isValueOf ;
           rdfs:domain :DemonstrationEnvironment ;
           rdfs:range :ValuePartition .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#isActorOf
+###  http://purl.org/deo#isActorOf
 :isActorOf rdf:type owl:ObjectProperty ;
            rdfs:subPropertyOf :isComponentOf ;
            rdfs:domain <http://xmlns.com/foaf/0.1/Agent> ;
            rdfs:range :DemonstrationEnvironment .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#isAppliedin
+###  http://purl.org/deo#isAppliedin
 :isAppliedin rdf:type owl:ObjectProperty ;
              rdfs:domain :DemonstrationEnvironment ;
              rdfs:range :ApplicationDomain .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#isCharacteristicOf
+###  http://purl.org/deo#isCharacteristicOf
 :isCharacteristicOf rdf:type owl:ObjectProperty ;
                     rdfs:domain :Characteristics ;
                     rdfs:range :DemonstrationEnvironment .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#isComponentOf
+###  http://purl.org/deo#isComponentOf
 :isComponentOf rdf:type owl:ObjectProperty ;
                rdfs:domain :Component ;
                rdfs:range :DemonstrationEnvironment .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#isEnvironmentOf
+###  http://purl.org/deo#isEnvironmentOf
 :isEnvironmentOf rdf:type owl:ObjectProperty ;
                  rdfs:subPropertyOf :isComponentOf ;
                  rdfs:domain :Environment ;
                  rdfs:range :DemonstrationEnvironment .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#isInitiatedBy
+###  http://purl.org/deo#isInitiatedBy
 :isInitiatedBy rdf:type owl:ObjectProperty ;
                rdfs:domain :DemonstrationEnvironment .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#isLargerThan
+###  http://purl.org/deo#isLargerThan
 :isLargerThan rdf:type owl:ObjectProperty ;
               rdfs:subPropertyOf :SizeComparison ;
               owl:inverseOf :isSmallerThan ;
@@ -191,56 +191,56 @@
               rdfs:range :SizeScale .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#isLifespanOf
+###  http://purl.org/deo#isLifespanOf
 :isLifespanOf rdf:type owl:ObjectProperty ;
               rdfs:subPropertyOf :isValueOf ;
               rdfs:domain :Lifespan ;
               rdfs:range :DemonstrationEnvironment .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#isMaturityOf
+###  http://purl.org/deo#isMaturityOf
 :isMaturityOf rdf:type owl:ObjectProperty ;
               rdfs:subPropertyOf :isValueOf ;
               rdfs:domain :TargetMaturity ;
               rdfs:range :DemonstrationEnvironment .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#isObjectiveOf
+###  http://purl.org/deo#isObjectiveOf
 :isObjectiveOf rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf :isComponentOf ;
                rdfs:domain :Objective ;
                rdfs:range :DemonstrationEnvironment .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#isOutcomeOf
+###  http://purl.org/deo#isOutcomeOf
 :isOutcomeOf rdf:type owl:ObjectProperty ;
              rdfs:subPropertyOf :isComponentOf ;
              rdfs:domain :Outcome ;
              rdfs:range :DemonstrationEnvironment .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#isProcessCharacteristicOf
+###  http://purl.org/deo#isProcessCharacteristicOf
 :isProcessCharacteristicOf rdf:type owl:ObjectProperty ;
                            rdfs:subPropertyOf :isCharacteristicOf ;
                            rdfs:domain :Process ;
                            rdfs:range :DemonstrationEnvironment .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#isRequirementCharacteristicOf
+###  http://purl.org/deo#isRequirementCharacteristicOf
 :isRequirementCharacteristicOf rdf:type owl:ObjectProperty ;
                                rdfs:subPropertyOf :isCharacteristicOf ;
                                rdfs:domain :Requirement ;
                                rdfs:range :DemonstrationEnvironment .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#isSizeScaleOf
+###  http://purl.org/deo#isSizeScaleOf
 :isSizeScaleOf rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf :isValueOf ;
                rdfs:domain :SizeScale ;
                rdfs:range :DemonstrationEnvironment .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#isSmallerThan
+###  http://purl.org/deo#isSmallerThan
 :isSmallerThan rdf:type owl:ObjectProperty ;
                rdfs:subPropertyOf :SizeComparison ;
                rdf:type owl:TransitiveProperty ;
@@ -248,21 +248,21 @@
                rdfs:range :SizeScale .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#isStateCharacteristicOf
+###  http://purl.org/deo#isStateCharacteristicOf
 :isStateCharacteristicOf rdf:type owl:ObjectProperty ;
                          rdfs:subPropertyOf :isCharacteristicOf ;
                          rdfs:domain :State ;
                          rdfs:range :DemonstrationEnvironment .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#isToolOf
+###  http://purl.org/deo#isToolOf
 :isToolOf rdf:type owl:ObjectProperty ;
           rdfs:subPropertyOf :isComponentOf ;
-          rdfs:domain <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Tool&Facility> ;
+          rdfs:domain <http://purl.org/deo#Tool&Facility> ;
           rdfs:range :DemonstrationEnvironment .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#isValueOf
+###  http://purl.org/deo#isValueOf
 :isValueOf rdf:type owl:ObjectProperty ;
            rdfs:domain :ValuePartition ;
            rdfs:range :DemonstrationEnvironment .
@@ -272,13 +272,13 @@
 #    Data properties
 #################################################################
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#ForSize
+###  http://purl.org/deo#ForSize
 :ForSize rdf:type owl:DatatypeProperty ;
          rdfs:domain :SizeScale ;
          rdfs:range xsd:float .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#ForTime
+###  http://purl.org/deo#ForTime
 :ForTime rdf:type owl:DatatypeProperty ;
          rdfs:domain :Lifespan ;
          rdfs:range xsd:float .
@@ -288,7 +288,7 @@
 #    Classes
 #################################################################
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#ApplicationDomain
+###  http://purl.org/deo#ApplicationDomain
 :ApplicationDomain rdf:type owl:Class ;
                    rdfs:subClassOf [ rdf:type owl:Restriction ;
                                      owl:onProperty :Applies ;
@@ -297,7 +297,7 @@
                    rdfs:comment "Describes the common application domains of Demonstration Environments" .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Bench-scale
+###  http://purl.org/deo#Bench-scale
 :Bench-scale rdf:type owl:Class ;
              rdfs:subClassOf :Named ,
                              :Small-scale ,
@@ -313,13 +313,13 @@
                               :Production-scale .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Biochemistry
+###  http://purl.org/deo#Biochemistry
 :Biochemistry rdf:type owl:Class ;
               rdfs:subClassOf :ApplicationDomain ;
               rdfs:label "Biochemistry" .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Characteristics
+###  http://purl.org/deo#Characteristics
 :Characteristics rdf:type owl:Class ;
                  rdfs:subClassOf [ rdf:type owl:Restriction ;
                                    owl:onProperty :isCharacteristicOf ;
@@ -328,9 +328,10 @@
                  rdfs:comment "Defines all types of characteristics to describe the DE" .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Commercial-scale
+###  http://purl.org/deo#Commercial-scale
 :Commercial-scale rdf:type owl:Class ;
                   owl:equivalentClass :Full-scale ,
+                                      :Industrial-scale ,
                                       :Production-scale ;
                   rdfs:subClassOf :Named ;
                   owl:disjointWith :Demonstration-scale ,
@@ -338,12 +339,12 @@
                                    :Pilot-scale .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Community
+###  http://purl.org/deo#Community
 :Community rdf:type owl:Class ;
            rdfs:subClassOf :InformalOrganization .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Component
+###  http://purl.org/deo#Component
 :Component rdf:type owl:Class ;
            rdfs:subClassOf [ rdf:type owl:Restriction ;
                              owl:onProperty :isComponentOf ;
@@ -352,18 +353,18 @@
            rdfs:comment "Defines the network component surrounding the DEs" .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#ComputerScience
+###  http://purl.org/deo#ComputerScience
 :ComputerScience rdf:type owl:Class ;
                  rdfs:subClassOf :ApplicationDomain ;
                  rdfs:label "ComputerScience" .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Concept
+###  http://purl.org/deo#Concept
 :Concept rdf:type owl:Class ;
          rdfs:subClassOf :IntangibleOutcome .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Demonstration-scale
+###  http://purl.org/deo#Demonstration-scale
 :Demonstration-scale rdf:type owl:Class ;
                      rdfs:subClassOf :Large-scale ,
                                      :Named ,
@@ -380,7 +381,7 @@
                                       :Production-scale .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#DemonstrationEnvironment
+###  http://purl.org/deo#DemonstrationEnvironment
 :DemonstrationEnvironment rdf:type owl:Class ;
                           rdfs:subClassOf [ rdf:type owl:Restriction ;
                                             owl:onProperty :hasCharacteristic ;
@@ -401,7 +402,7 @@
                           rdfs:comment "This class defines different named DEs" .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#DemonstrationPlant
+###  http://purl.org/deo#DemonstrationPlant
 :DemonstrationPlant rdf:type owl:Class ;
                     rdfs:subClassOf :DemonstrationEnvironment ,
                                     [ rdf:type owl:Class ;
@@ -464,7 +465,7 @@
                                                            owl:unionOf ( :Biochemistry
                                                                          :Engineering
                                                                          :EnvironmentStudy
-                                                                         <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Energy&Fuels>
+                                                                         <http://purl.org/deo#Energy&Fuels>
                                                                        )
                                                          ]
                                     ] ,
@@ -482,7 +483,7 @@
                                     ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty :hasObjective ;
-                                      owl:allValuesFrom <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Validation&Verification>
+                                      owl:allValuesFrom <http://purl.org/deo#Validation&Verification>
                                     ] ,
                                     [ rdf:type owl:Restriction ;
                                       owl:onProperty :hasOutcome ;
@@ -500,33 +501,33 @@
                     rdfs:label "Demonstration Plant" .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Design
+###  http://purl.org/deo#Design
 :Design rdf:type owl:Class ;
         rdfs:subClassOf :TangibleOutcome .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Developer
+###  http://purl.org/deo#Developer
 :Developer rdf:type owl:Class ;
            rdfs:subClassOf <http://xmlns.com/foaf/0.1/Person> .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Education
+###  http://purl.org/deo#Education
 :Education rdf:type owl:Class ;
            rdfs:subClassOf :ApplicationDomain ;
            rdfs:label "Education" .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#EducationalOrganization
+###  http://purl.org/deo#EducationalOrganization
 :EducationalOrganization rdf:type owl:Class ;
                          rdfs:subClassOf :FormalOrganization .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#ElectronicDevice
+###  http://purl.org/deo#ElectronicDevice
 :ElectronicDevice rdf:type owl:Class ;
-                  rdfs:subClassOf <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Tool&Facility> .
+                  rdfs:subClassOf <http://purl.org/deo#Tool&Facility> .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Enabler-driven
+###  http://purl.org/deo#Enabler-driven
 :Enabler-driven rdf:type owl:Class ;
                 rdfs:subClassOf :LivingLab ,
                                 [ rdf:type owl:Restriction ;
@@ -558,7 +559,7 @@
                                   owl:onProperty :hasObjective ;
                                   owl:allValuesFrom [ rdf:type owl:Class ;
                                                       owl:unionOf ( :Innovation
-                                                                    <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Design&Development>
+                                                                    <http://purl.org/deo#Design&Development>
                                                                   )
                                                     ]
                                 ] ,
@@ -577,51 +578,51 @@
                 rdfs:label "Enabler-driven Living Lab" .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#End-user
+###  http://purl.org/deo#End-user
 :End-user rdf:type owl:Class ;
           rdfs:subClassOf <http://xmlns.com/foaf/0.1/Person> .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Engineer
+###  http://purl.org/deo#Engineer
 :Engineer rdf:type owl:Class ;
           rdfs:subClassOf <http://xmlns.com/foaf/0.1/Person> .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Engineering
+###  http://purl.org/deo#Engineering
 :Engineering rdf:type owl:Class ;
              rdfs:subClassOf :ApplicationDomain ;
              rdfs:label "Engineering" .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Environment
+###  http://purl.org/deo#Environment
 :Environment rdf:type owl:Class ;
              rdfs:subClassOf :Component ;
              rdfs:comment "Describes the set of working environments of DEs" .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#EnvironmentStudy
+###  http://purl.org/deo#EnvironmentStudy
 :EnvironmentStudy rdf:type owl:Class ;
                   rdfs:subClassOf :ApplicationDomain ;
                   rdfs:label "EnvironmentStudy" .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Facilitator
+###  http://purl.org/deo#Facilitator
 :Facilitator rdf:type owl:Class ;
              rdfs:subClassOf <http://xmlns.com/foaf/0.1/Person> .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Finance
+###  http://purl.org/deo#Finance
 :Finance rdf:type owl:Class ;
          rdfs:subClassOf :ApplicationDomain ;
          rdfs:label "Finance" .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#FormalOrganization
+###  http://purl.org/deo#FormalOrganization
 :FormalOrganization rdf:type owl:Class ;
                     rdfs:subClassOf <http://xmlns.com/foaf/0.1/Organization> .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Full-scale
+###  http://purl.org/deo#Full-scale
 :Full-scale rdf:type owl:Class ;
             owl:equivalentClass :Industrial-scale ,
                                 :Production-scale ;
@@ -631,7 +632,7 @@
                              :Pilot-scale .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#GeneralSandbox
+###  http://purl.org/deo#GeneralSandbox
 :GeneralSandbox rdf:type owl:Class ;
                 rdfs:subClassOf :Sandbox ,
                                 [ rdf:type owl:Restriction ;
@@ -669,19 +670,19 @@
                 rdfs:label "General Sandbox" .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Geomorphology
+###  http://purl.org/deo#Geomorphology
 :Geomorphology rdf:type owl:Class ;
                rdfs:subClassOf :ApplicationDomain ;
                rdfs:label "Geomorphology" .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#GovernmentalOrganization
+###  http://purl.org/deo#GovernmentalOrganization
 :GovernmentalOrganization rdf:type owl:Class ;
                           rdfs:subClassOf :PublicOrganization ;
                           owl:disjointWith :Non-governmentalOrganization .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Hatchery
+###  http://purl.org/deo#Hatchery
 :Hatchery rdf:type owl:Class ;
           owl:equivalentClass :Incubator ,
                               :InnovationCenter ,
@@ -690,18 +691,18 @@
           rdfs:subClassOf :DemonstrationEnvironment .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Healthcare
+###  http://purl.org/deo#Healthcare
 :Healthcare rdf:type owl:Class ;
             rdfs:subClassOf :ApplicationDomain ;
             rdfs:label "Healthcare" .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Immature
+###  http://purl.org/deo#Immature
 :Immature rdf:type owl:Class ;
           rdfs:subClassOf :TargetMaturity .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Incubator
+###  http://purl.org/deo#Incubator
 :Incubator rdf:type owl:Class ;
            owl:equivalentClass :InnovationCenter ,
                                :InnovationHub ,
@@ -709,7 +710,7 @@
            rdfs:subClassOf :DemonstrationEnvironment .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Industrial-scale
+###  http://purl.org/deo#Industrial-scale
 :Industrial-scale rdf:type owl:Class ;
                   owl:equivalentClass :Production-scale ;
                   rdfs:subClassOf :Named ;
@@ -717,23 +718,23 @@
                                    :Pilot-scale .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#IndustrialLivingLab
+###  http://purl.org/deo#IndustrialLivingLab
 :IndustrialLivingLab rdf:type owl:Class ;
                      rdfs:subClassOf :Utilizer-driven ;
                      rdfs:label "Industrial Living Lab" .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#InformalOrganization
+###  http://purl.org/deo#InformalOrganization
 :InformalOrganization rdf:type owl:Class ;
                       rdfs:subClassOf <http://xmlns.com/foaf/0.1/Organization> .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Innovation
+###  http://purl.org/deo#Innovation
 :Innovation rdf:type owl:Class ;
             rdfs:subClassOf :Objective .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#InnovationCenter
+###  http://purl.org/deo#InnovationCenter
 :InnovationCenter rdf:type owl:Class ;
                   owl:equivalentClass :InnovationHub ,
                                       :InnovationLab ;
@@ -741,14 +742,14 @@
                   rdfs:label "Innovation Center" .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#InnovationHub
+###  http://purl.org/deo#InnovationHub
 :InnovationHub rdf:type owl:Class ;
                owl:equivalentClass :InnovationLab ;
                rdfs:subClassOf :DemonstrationEnvironment ;
                rdfs:label "Innovation Hub" .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#InnovationLab
+###  http://purl.org/deo#InnovationLab
 :InnovationLab rdf:type owl:Class ;
                rdfs:subClassOf :DemonstrationEnvironment ,
                                [ rdf:type owl:Restriction ;
@@ -837,7 +838,7 @@
                                ] ,
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty :isAppliedin ;
-                                 owl:someValuesFrom <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Business&Economics>
+                                 owl:someValuesFrom <http://purl.org/deo#Business&Economics>
                                ] ,
                                [ rdf:type owl:Restriction ;
                                  owl:onProperty :hasEnvironment ;
@@ -868,35 +869,35 @@
                                  owl:onProperty :hasObjective ;
                                  owl:allValuesFrom [ rdf:type owl:Class ;
                                                      owl:unionOf ( :Innovation
-                                                                   <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Design&Development>
+                                                                   <http://purl.org/deo#Design&Development>
                                                                  )
                                                    ]
                                ] ;
                rdfs:label "Innovation Lab" .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Instructor
+###  http://purl.org/deo#Instructor
 :Instructor rdf:type owl:Class ;
             rdfs:subClassOf <http://xmlns.com/foaf/0.1/Person> .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#IntangibleOutcome
+###  http://purl.org/deo#IntangibleOutcome
 :IntangibleOutcome rdf:type owl:Class ;
                    rdfs:subClassOf :Outcome ;
                    owl:disjointWith :TangibleOutcome .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#IntellectualPropertyRight
+###  http://purl.org/deo#IntellectualPropertyRight
 :IntellectualPropertyRight rdf:type owl:Class ;
                            rdfs:subClassOf :IntangibleOutcome .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Knowledge
+###  http://purl.org/deo#Knowledge
 :Knowledge rdf:type owl:Class ;
            rdfs:subClassOf :IntangibleOutcome .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Laboratory-scale
+###  http://purl.org/deo#Laboratory-scale
 :Laboratory-scale rdf:type owl:Class ;
                   rdfs:subClassOf :Named ,
                                   :Small-scale ,
@@ -908,7 +909,7 @@
                                    :Production-scale .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Large-scale
+###  http://purl.org/deo#Large-scale
 :Large-scale rdf:type owl:Class ;
              rdfs:subClassOf :Sized ,
                              [ rdf:type owl:Restriction ;
@@ -917,13 +918,13 @@
                              ] .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Lifespan
+###  http://purl.org/deo#Lifespan
 :Lifespan rdf:type owl:Class ;
           rdfs:subClassOf :ValuePartition ;
           rdfs:comment "Defines the lifespan of DEs" .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#LivingLab
+###  http://purl.org/deo#LivingLab
 :LivingLab rdf:type owl:Class ;
            rdfs:subClassOf :DemonstrationEnvironment ,
                            [ rdf:type owl:Restriction ;
@@ -1004,7 +1005,7 @@
                            ] ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty :isAppliedin ;
-                             owl:someValuesFrom <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Business&Economics>
+                             owl:someValuesFrom <http://purl.org/deo#Business&Economics>
                            ] ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty :hasEnvironment ;
@@ -1023,7 +1024,7 @@
                              owl:onProperty :hasObjective ;
                              owl:allValuesFrom [ rdf:type owl:Class ;
                                                  owl:unionOf ( :Innovation
-                                                               <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Design&Development>
+                                                               <http://purl.org/deo#Design&Development>
                                                              )
                                                ]
                            ] ,
@@ -1064,55 +1065,55 @@
            <http://www.w3.org/2004/02/skos/core#altLabel> "Living Laboratory, Living-Lab" .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Long-term
+###  http://purl.org/deo#Long-term
 :Long-term rdf:type owl:Class ;
            rdfs:subClassOf :Lifespan .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#MachineOperator
+###  http://purl.org/deo#MachineOperator
 :MachineOperator rdf:type owl:Class ;
                  rdfs:subClassOf <http://xmlns.com/foaf/0.1/Person> .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Machinery
+###  http://purl.org/deo#Machinery
 :Machinery rdf:type owl:Class ;
-           rdfs:subClassOf <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Tool&Facility> .
+           rdfs:subClassOf <http://purl.org/deo#Tool&Facility> .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#MaterialsScience
+###  http://purl.org/deo#MaterialsScience
 :MaterialsScience rdf:type owl:Class ;
                   rdfs:subClassOf :ApplicationDomain ;
                   rdfs:label "MaterialScience" .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Mature
+###  http://purl.org/deo#Mature
 :Mature rdf:type owl:Class ;
         rdfs:subClassOf :TargetMaturity .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Medium-term
+###  http://purl.org/deo#Medium-term
 :Medium-term rdf:type owl:Class ;
              rdfs:subClassOf :Lifespan .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Metrology
+###  http://purl.org/deo#Metrology
 :Metrology rdf:type owl:Class ;
            rdfs:subClassOf :ApplicationDomain ;
            rdfs:label "Metrology" .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Microelectronic
+###  http://purl.org/deo#Microelectronic
 :Microelectronic rdf:type owl:Class ;
                  rdfs:subClassOf :ApplicationDomain ;
                  rdfs:label "Microelectronic" .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#ModeledContext
+###  http://purl.org/deo#ModeledContext
 :ModeledContext rdf:type owl:Class ;
                 rdfs:subClassOf :Environment .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Named
+###  http://purl.org/deo#Named
 :Named rdf:type owl:Class ;
        rdfs:subClassOf :SizeScale ,
                        [ rdf:type owl:Restriction ;
@@ -1129,24 +1130,24 @@
        rdfs:comment "includes a set of named size scales that are used to describe certain DEs only" .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Non-governmentalOrganization
+###  http://purl.org/deo#Non-governmentalOrganization
 :Non-governmentalOrganization rdf:type owl:Class ;
                               rdfs:subClassOf :PublicOrganization .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Objective
+###  http://purl.org/deo#Objective
 :Objective rdf:type owl:Class ;
            rdfs:subClassOf :Component ;
            rdfs:comment "Defines the set of objectives of using a DE" .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Outcome
+###  http://purl.org/deo#Outcome
 :Outcome rdf:type owl:Class ;
          rdfs:subClassOf :Component ;
          rdfs:comment "What is created after using a certain Demonstration Environment" .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Pilot-scale
+###  http://purl.org/deo#Pilot-scale
 :Pilot-scale rdf:type owl:Class ;
              rdfs:subClassOf :Named ,
                              :Small-scale ,
@@ -1161,7 +1162,7 @@
              owl:disjointWith :Production-scale .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#PilotLine
+###  http://purl.org/deo#PilotLine
 :PilotLine rdf:type owl:Class ;
            owl:equivalentClass :PilotPlant ,
                                :PilotScalePlant ;
@@ -1230,7 +1231,7 @@
                                                   owl:unionOf ( :Biochemistry
                                                                 :Engineering
                                                                 :EnvironmentStudy
-                                                                <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Energy&Fuels>
+                                                                <http://purl.org/deo#Energy&Fuels>
                                                               )
                                                 ]
                            ] ,
@@ -1257,10 +1258,10 @@
                            [ rdf:type owl:Restriction ;
                              owl:onProperty :hasObjective ;
                              owl:allValuesFrom [ rdf:type owl:Class ;
-                                                 owl:unionOf ( <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Assessment&Diagnosis>
-                                                               <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Education&Training>
-                                                               <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Test&Experiment>
-                                                               <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Validation&Verification>
+                                                 owl:unionOf ( <http://purl.org/deo#Assessment&Diagnosis>
+                                                               <http://purl.org/deo#Education&Training>
+                                                               <http://purl.org/deo#Test&Experiment>
+                                                               <http://purl.org/deo#Validation&Verification>
                                                              )
                                                ]
                            ] ,
@@ -1281,47 +1282,47 @@
            <http://www.w3.org/2004/02/skos/core#altLabel> "Pilot-Line" .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#PilotPlant
+###  http://purl.org/deo#PilotPlant
 :PilotPlant rdf:type owl:Class ;
             owl:equivalentClass :PilotScalePlant ;
             rdfs:subClassOf :DemonstrationEnvironment ;
             rdfs:label "Pilot Plant" .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#PilotScalePlant
+###  http://purl.org/deo#PilotScalePlant
 :PilotScalePlant rdf:type owl:Class ;
                  rdfs:subClassOf :DemonstrationEnvironment ;
                  rdfs:label "Pilot-scale Plant" .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#PrivateSector
+###  http://purl.org/deo#PrivateSector
 :PrivateSector rdf:type owl:Class ;
                rdfs:subClassOf :FormalOrganization .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Process
+###  http://purl.org/deo#Process
 :Process rdf:type owl:Class ;
          rdfs:subClassOf :Characteristics ;
          rdfs:comment "Describes the characteristics of process for a DE" ;
          rdfs:label "Process Characteristic" .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Product
+###  http://purl.org/deo#Product
 :Product rdf:type owl:Class ;
          rdfs:subClassOf :TangibleOutcome .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Production-scale
+###  http://purl.org/deo#Production-scale
 :Production-scale rdf:type owl:Class ;
                   rdfs:subClassOf :Named .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Prototype
+###  http://purl.org/deo#Prototype
 :Prototype rdf:type owl:Class ;
            rdfs:subClassOf :TangibleOutcome .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#PrototypePlant
+###  http://purl.org/deo#PrototypePlant
 :PrototypePlant rdf:type owl:Class ;
                 rdfs:subClassOf :DemonstrationEnvironment ,
                                 [ rdf:type owl:Class ;
@@ -1364,7 +1365,7 @@
                                 ] ,
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty :hasTool ;
-                                  owl:someValuesFrom <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Hardware&Software>
+                                  owl:someValuesFrom <http://purl.org/deo#Hardware&Software>
                                 ] ,
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty :isAppliedin ;
@@ -1380,7 +1381,7 @@
                                                        owl:unionOf ( :Biochemistry
                                                                      :Engineering
                                                                      :EnvironmentStudy
-                                                                     <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Energy&Fuels>
+                                                                     <http://purl.org/deo#Energy&Fuels>
                                                                    )
                                                      ]
                                 ] ,
@@ -1399,9 +1400,9 @@
                                 [ rdf:type owl:Restriction ;
                                   owl:onProperty :hasObjective ;
                                   owl:allValuesFrom [ rdf:type owl:Class ;
-                                                      owl:unionOf ( <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Assessment&Diagnosis>
-                                                                    <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Test&Experiment>
-                                                                    <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Validation&Verification>
+                                                      owl:unionOf ( <http://purl.org/deo#Assessment&Diagnosis>
+                                                                    <http://purl.org/deo#Test&Experiment>
+                                                                    <http://purl.org/deo#Validation&Verification>
                                                                   )
                                                     ]
                                 ] ,
@@ -1421,7 +1422,7 @@
                 rdfs:label "Prototype Plant" .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#PrototypingPlatform
+###  http://purl.org/deo#PrototypingPlatform
 :PrototypingPlatform rdf:type owl:Class ;
                      rdfs:subClassOf :DemonstrationEnvironment ,
                                      [ rdf:type owl:Class ;
@@ -1492,7 +1493,7 @@
                                      ] ,
                                      [ rdf:type owl:Restriction ;
                                        owl:onProperty :hasTool ;
-                                       owl:someValuesFrom <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Hardware&Software>
+                                       owl:someValuesFrom <http://purl.org/deo#Hardware&Software>
                                      ] ,
                                      [ rdf:type owl:Restriction ;
                                        owl:onProperty :isAppliedin ;
@@ -1517,9 +1518,9 @@
                                      [ rdf:type owl:Restriction ;
                                        owl:onProperty :hasObjective ;
                                        owl:allValuesFrom [ rdf:type owl:Class ;
-                                                           owl:unionOf ( <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Assessment&Diagnosis>
-                                                                         <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Test&Experiment>
-                                                                         <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Validation&Verification>
+                                                           owl:unionOf ( <http://purl.org/deo#Assessment&Diagnosis>
+                                                                         <http://purl.org/deo#Test&Experiment>
+                                                                         <http://purl.org/deo#Validation&Verification>
                                                                        )
                                                          ]
                                      ] ,
@@ -1536,7 +1537,7 @@
                      <http://www.w3.org/2004/02/skos/core#altLabel> "Prototype Platform" .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Provider-driven
+###  http://purl.org/deo#Provider-driven
 :Provider-driven rdf:type owl:Class ;
                  rdfs:subClassOf :LivingLab ,
                                  [ rdf:type owl:Restriction ;
@@ -1556,7 +1557,7 @@
                                    owl:onProperty :hasObjective ;
                                    owl:allValuesFrom [ rdf:type owl:Class ;
                                                        owl:unionOf ( :Innovation
-                                                                     <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Design&Development>
+                                                                     <http://purl.org/deo#Design&Development>
                                                                    )
                                                      ]
                                  ] ,
@@ -1572,28 +1573,28 @@
                  rdfs:label "Provider-driven Living Lab" .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#PublicAffairs
+###  http://purl.org/deo#PublicAffairs
 :PublicAffairs rdf:type owl:Class ;
                rdfs:subClassOf :ApplicationDomain ;
                rdfs:label "PublicAffairs" .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#PublicOrganization
+###  http://purl.org/deo#PublicOrganization
 :PublicOrganization rdf:type owl:Class ;
                     rdfs:subClassOf :FormalOrganization .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Real-lifeContext
+###  http://purl.org/deo#Real-lifeContext
 :Real-lifeContext rdf:type owl:Class ;
                   rdfs:subClassOf :Environment .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Regulator
+###  http://purl.org/deo#Regulator
 :Regulator rdf:type owl:Class ;
            rdfs:subClassOf <http://xmlns.com/foaf/0.1/Person> .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#RegulatorySandbox
+###  http://purl.org/deo#RegulatorySandbox
 :RegulatorySandbox rdf:type owl:Class ;
                    rdfs:subClassOf :Sandbox ,
                                    [ rdf:type owl:Restriction ;
@@ -1618,7 +1619,7 @@
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty :isAppliedin ;
-                                     owl:someValuesFrom <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#LegalAffairs&Regulations>
+                                     owl:someValuesFrom <http://purl.org/deo#LegalAffairs&Regulations>
                                    ] ,
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty :hasActor ;
@@ -1634,8 +1635,8 @@
                                    [ rdf:type owl:Restriction ;
                                      owl:onProperty :hasObjective ;
                                      owl:allValuesFrom [ rdf:type owl:Class ;
-                                                         owl:unionOf ( <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Assessment&Diagnosis>
-                                                                       <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Test&Experiment>
+                                                         owl:unionOf ( <http://purl.org/deo#Assessment&Diagnosis>
+                                                                       <http://purl.org/deo#Test&Experiment>
                                                                      )
                                                        ]
                                    ] ,
@@ -1656,19 +1657,19 @@
                    rdfs:label "Regulatory Sandbox" .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Requirement
+###  http://purl.org/deo#Requirement
 :Requirement rdf:type owl:Class ;
              rdfs:subClassOf :Characteristics ;
              rdfs:comment "Describes the required characteristic that a DE should possess" ;
              rdfs:label "Requirement Characteristic" .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Researcher
+###  http://purl.org/deo#Researcher
 :Researcher rdf:type owl:Class ;
             rdfs:subClassOf <http://xmlns.com/foaf/0.1/Person> .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Sandbox
+###  http://purl.org/deo#Sandbox
 :Sandbox rdf:type owl:Class ;
          rdfs:subClassOf :DemonstrationEnvironment ,
                          [ rdf:type owl:Restriction ;
@@ -1721,9 +1722,9 @@
                          [ rdf:type owl:Restriction ;
                            owl:onProperty :hasObjective ;
                            owl:allValuesFrom [ rdf:type owl:Class ;
-                                               owl:unionOf ( <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Assessment&Diagnosis>
-                                                             <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Test&Experiment>
-                                                             <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Validation&Verification>
+                                               owl:unionOf ( <http://purl.org/deo#Assessment&Diagnosis>
+                                                             <http://purl.org/deo#Test&Experiment>
+                                                             <http://purl.org/deo#Validation&Verification>
                                                            )
                                              ]
                          ] ,
@@ -1740,39 +1741,39 @@
                          ] .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Semi-mature
+###  http://purl.org/deo#Semi-mature
 :Semi-mature rdf:type owl:Class ;
              rdfs:subClassOf :TargetMaturity .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Semi-realisticContext
+###  http://purl.org/deo#Semi-realisticContext
 :Semi-realisticContext rdf:type owl:Class ;
                        rdfs:subClassOf :Environment .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Service
+###  http://purl.org/deo#Service
 :Service rdf:type owl:Class ;
          rdfs:subClassOf :IntangibleOutcome .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Short-term
+###  http://purl.org/deo#Short-term
 :Short-term rdf:type owl:Class ;
             rdfs:subClassOf :Lifespan .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#SizeScale
+###  http://purl.org/deo#SizeScale
 :SizeScale rdf:type owl:Class ;
            rdfs:subClassOf :ValuePartition ;
            rdfs:comment "Defines the size of DEs" .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Sized
+###  http://purl.org/deo#Sized
 :Sized rdf:type owl:Class ;
        rdfs:subClassOf :SizeScale ;
        rdfs:comment "General words that describe size of a DE" .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Small-scale
+###  http://purl.org/deo#Small-scale
 :Small-scale rdf:type owl:Class ;
              rdfs:subClassOf :Sized ,
                              [ rdf:type owl:Restriction ;
@@ -1781,47 +1782,47 @@
                              ] .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#SocialLivingLab
+###  http://purl.org/deo#SocialLivingLab
 :SocialLivingLab rdf:type owl:Class ;
                  rdfs:subClassOf :User-driven ;
                  rdfs:label "Social Living Lab" .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Solution
+###  http://purl.org/deo#Solution
 :Solution rdf:type owl:Class ;
           rdfs:subClassOf :TangibleOutcome .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#State
+###  http://purl.org/deo#State
 :State rdf:type owl:Class ;
        rdfs:subClassOf :Characteristics ;
        rdfs:comment "Describes the characteristics of state for a DE" ;
        rdfs:label "State Characteristic" .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#SustainableScience
+###  http://purl.org/deo#SustainableScience
 :SustainableScience rdf:type owl:Class ;
                     rdfs:subClassOf :ApplicationDomain ;
                     rdfs:label "SustainableScience" .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#System
+###  http://purl.org/deo#System
 :System rdf:type owl:Class ;
         rdfs:subClassOf :TangibleOutcome .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#TangibleOutcome
+###  http://purl.org/deo#TangibleOutcome
 :TangibleOutcome rdf:type owl:Class ;
                  rdfs:subClassOf :Outcome .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#TargetMaturity
+###  http://purl.org/deo#TargetMaturity
 :TargetMaturity rdf:type owl:Class ;
                 rdfs:subClassOf :ValuePartition ;
                 rdfs:comment "Describes the maturity of target technology to be demonstrated" .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Testbed
+###  http://purl.org/deo#Testbed
 :Testbed rdf:type owl:Class ;
          rdfs:subClassOf :DemonstrationEnvironment ,
                          [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
@@ -1977,7 +1978,7 @@
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty :hasTool ;
-                           owl:someValuesFrom <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Hardware&Software>
+                           owl:someValuesFrom <http://purl.org/deo#Hardware&Software>
                          ] ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty :isAppliedin ;
@@ -2014,10 +2015,10 @@
                          [ rdf:type owl:Restriction ;
                            owl:onProperty :hasObjective ;
                            owl:allValuesFrom [ rdf:type owl:Class ;
-                                               owl:unionOf ( <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Assessment&Diagnosis>
-                                                             <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Education&Training>
-                                                             <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Test&Experiment>
-                                                             <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Validation&Verification>
+                                               owl:unionOf ( <http://purl.org/deo#Assessment&Diagnosis>
+                                                             <http://purl.org/deo#Education&Training>
+                                                             <http://purl.org/deo#Test&Experiment>
+                                                             <http://purl.org/deo#Validation&Verification>
                                                            )
                                              ]
                          ] ,
@@ -2035,7 +2036,7 @@
                                                         "Test-bed" .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Testbench
+###  http://purl.org/deo#Testbench
 :Testbench rdf:type owl:Class ;
            rdfs:subClassOf :DemonstrationEnvironment ,
                            [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
@@ -2143,7 +2144,7 @@
                            ] ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty :hasTool ;
-                             owl:someValuesFrom <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Hardware&Software>
+                             owl:someValuesFrom <http://purl.org/deo#Hardware&Software>
                            ] ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty :isAppliedin ;
@@ -2167,7 +2168,7 @@
                            ] ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty :isAppliedin ;
-                             owl:someValuesFrom <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Energy&Fuels>
+                             owl:someValuesFrom <http://purl.org/deo#Energy&Fuels>
                            ] ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty :hasEnvironment ;
@@ -2192,9 +2193,9 @@
                            [ rdf:type owl:Restriction ;
                              owl:onProperty :hasObjective ;
                              owl:allValuesFrom [ rdf:type owl:Class ;
-                                                 owl:unionOf ( <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Assessment&Diagnosis>
-                                                               <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Test&Experiment>
-                                                               <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Validation&Verification>
+                                                 owl:unionOf ( <http://purl.org/deo#Assessment&Diagnosis>
+                                                               <http://purl.org/deo#Test&Experiment>
+                                                               <http://purl.org/deo#Validation&Verification>
                                                              )
                                                ]
                            ] ,
@@ -2217,13 +2218,13 @@
            <http://www.w3.org/2004/02/skos/core#altLabel> "Test bench, Test-bench" .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Tourism
+###  http://purl.org/deo#Tourism
 :Tourism rdf:type owl:Class ;
          rdfs:subClassOf :ApplicationDomain ;
          rdfs:label "Tourism" .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#UrbanLivingLab
+###  http://purl.org/deo#UrbanLivingLab
 :UrbanLivingLab rdf:type owl:Class ;
                 rdfs:subClassOf :Enabler-driven ,
                                 [ rdf:type owl:Restriction ;
@@ -2237,7 +2238,7 @@
                 rdfs:label "Urban Living Lab" .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#User-driven
+###  http://purl.org/deo#User-driven
 :User-driven rdf:type owl:Class ;
              rdfs:subClassOf :LivingLab ,
                              [ rdf:type owl:Restriction ;
@@ -2255,7 +2256,7 @@
                              [ rdf:type owl:Restriction ;
                                owl:onProperty :hasObjective ;
                                owl:allValuesFrom [ owl:intersectionOf ( :Innovation
-                                                                        <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Design&Development>
+                                                                        <http://purl.org/deo#Design&Development>
                                                                       ) ;
                                                    rdf:type owl:Class
                                                  ]
@@ -2275,7 +2276,7 @@
              rdfs:label "User-driven Living Lab" .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Utilizer-driven
+###  http://purl.org/deo#Utilizer-driven
 :Utilizer-driven rdf:type owl:Class ;
                  rdfs:subClassOf :LivingLab ,
                                  [ rdf:type owl:Restriction ;
@@ -2293,8 +2294,8 @@
                                  [ rdf:type owl:Restriction ;
                                    owl:onProperty :hasObjective ;
                                    owl:allValuesFrom [ rdf:type owl:Class ;
-                                                       owl:unionOf ( <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Design&Development>
-                                                                     <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Validation&Verification>
+                                                       owl:unionOf ( <http://purl.org/deo#Design&Development>
+                                                                     <http://purl.org/deo#Validation&Verification>
                                                                    )
                                                      ]
                                  ] ,
@@ -2319,378 +2320,378 @@
                  rdfs:label "Utilizer-driven Living Lab" .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#ValuePartition
+###  http://purl.org/deo#ValuePartition
 :ValuePartition rdf:type owl:Class ;
                 rdfs:comment "Defines a set of value scales that are used to describe the DE" .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#agile
+###  http://purl.org/deo#agile
 :agile rdf:type owl:Class ;
        rdfs:subClassOf :Process .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#collaborative
+###  http://purl.org/deo#collaborative
 :collaborative rdf:type owl:Class ;
                rdfs:subClassOf :Process .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#computerized
+###  http://purl.org/deo#computerized
 :computerized rdf:type owl:Class ;
               rdfs:subClassOf :Process .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#continuous
+###  http://purl.org/deo#continuous
 :continuous rdf:type owl:Class ;
             rdfs:subClassOf :Process ;
             owl:disjointWith :discontinuous .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#controlled
+###  http://purl.org/deo#controlled
 :controlled rdf:type owl:Class ;
             rdfs:subClassOf :Process .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#cultural
+###  http://purl.org/deo#cultural
 :cultural rdf:type owl:Class ;
           rdfs:subClassOf :Requirement .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#discontinuous
+###  http://purl.org/deo#discontinuous
 :discontinuous rdf:type owl:Class ;
                rdfs:subClassOf :Process .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#efficient
+###  http://purl.org/deo#efficient
 :efficient rdf:type owl:Class ;
            rdfs:subClassOf :Requirement .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#emulation
+###  http://purl.org/deo#emulation
 :emulation rdf:type owl:Class ;
            rdfs:subClassOf :Process .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#expandable
+###  http://purl.org/deo#expandable
 :expandable rdf:type owl:Class ;
             rdfs:subClassOf :Requirement ,
                             :State .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#facilitation
+###  http://purl.org/deo#facilitation
 :facilitation rdf:type owl:Class ;
               rdfs:subClassOf :Process .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#feasible
+###  http://purl.org/deo#feasible
 :feasible rdf:type owl:Class ;
           rdfs:subClassOf :Requirement .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#federated
+###  http://purl.org/deo#federated
 :federated rdf:type owl:Class ;
            rdfs:subClassOf :Requirement ,
                            :State .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#governance
+###  http://purl.org/deo#governance
 :governance rdf:type owl:Class ;
             rdfs:subClassOf :Process .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#heterogeneous
+###  http://purl.org/deo#heterogeneous
 :heterogeneous rdf:type owl:Class ;
                rdfs:subClassOf :State .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#high-fidelity
+###  http://purl.org/deo#high-fidelity
 :high-fidelity rdf:type owl:Class ;
                rdfs:subClassOf :Requirement .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#illustrative
+###  http://purl.org/deo#illustrative
 :illustrative rdf:type owl:Class ;
               rdfs:subClassOf :Process .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#inclusive
+###  http://purl.org/deo#inclusive
 :inclusive rdf:type owl:Class ;
            rdfs:subClassOf :State .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#industrial
+###  http://purl.org/deo#industrial
 :industrial rdf:type owl:Class ;
             rdfs:subClassOf :State .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#informal
+###  http://purl.org/deo#informal
 :informal rdf:type owl:Class ;
           rdfs:subClassOf :Process .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#interdisciplinary
+###  http://purl.org/deo#interdisciplinary
 :interdisciplinary rdf:type owl:Class ;
                    rdfs:subClassOf :State .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#interoperable
+###  http://purl.org/deo#interoperable
 :interoperable rdf:type owl:Class ;
                rdfs:subClassOf :Requirement ,
                                :State .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#isolated
+###  http://purl.org/deo#isolated
 :isolated rdf:type owl:Class ;
           rdfs:subClassOf :State .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#locomotive
+###  http://purl.org/deo#locomotive
 :locomotive rdf:type owl:Class ;
             rdfs:subClassOf :Requirement .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#low-cost
+###  http://purl.org/deo#low-cost
 :low-cost rdf:type owl:Class ;
           rdfs:subClassOf :Requirement .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#managerial
+###  http://purl.org/deo#managerial
 :managerial rdf:type owl:Class ;
             rdfs:subClassOf :Process .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#maneuverable
+###  http://purl.org/deo#maneuverable
 :maneuverable rdf:type owl:Class ;
               rdfs:subClassOf :Requirement .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#modular
+###  http://purl.org/deo#modular
 :modular rdf:type owl:Class ;
          rdfs:subClassOf :Requirement ,
                          :State .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#multi-stakeholder
+###  http://purl.org/deo#multi-stakeholder
 :multi-stakeholder rdf:type owl:Class ;
                    rdfs:subClassOf :State .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#open-source
+###  http://purl.org/deo#open-source
 :open-source rdf:type owl:Class ;
              rdfs:subClassOf :State .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#open_innovation
+###  http://purl.org/deo#open_innovation
 :open_innovation rdf:type owl:Class ;
                  rdfs:subClassOf :Process .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#participatory
+###  http://purl.org/deo#participatory
 :participatory rdf:type owl:Class ;
                rdfs:subClassOf :Process .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#physical
+###  http://purl.org/deo#physical
 :physical rdf:type owl:Class ;
           rdfs:subClassOf :State .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#political
+###  http://purl.org/deo#political
 :political rdf:type owl:Class ;
            rdfs:subClassOf :State .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#portable
+###  http://purl.org/deo#portable
 :portable rdf:type owl:Class ;
           rdfs:subClassOf :Requirement ,
                           :State .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#practical
+###  http://purl.org/deo#practical
 :practical rdf:type owl:Class ;
            rdfs:subClassOf :Process ,
                            :Requirement .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#preliminary
+###  http://purl.org/deo#preliminary
 :preliminary rdf:type owl:Class ;
              rdfs:subClassOf :State .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#programmable
+###  http://purl.org/deo#programmable
 :programmable rdf:type owl:Class ;
               rdfs:subClassOf :State .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#rapid
+###  http://purl.org/deo#rapid
 :rapid rdf:type owl:Class ;
        rdfs:subClassOf :Process ,
                        :Requirement .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#real-time
+###  http://purl.org/deo#real-time
 :real-time rdf:type owl:Class ;
            rdfs:subClassOf :Process ;
            rdfs:comment "the process can capture real-time information/outcome from the DE" .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#realistic
+###  http://purl.org/deo#realistic
 :realistic rdf:type owl:Class ;
            rdfs:subClassOf :Requirement ,
                            :State .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#reliable
+###  http://purl.org/deo#reliable
 :reliable rdf:type owl:Class ;
           rdfs:subClassOf :Requirement .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#reproducible
+###  http://purl.org/deo#reproducible
 :reproducible rdf:type owl:Class ;
               rdfs:subClassOf :Requirement .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#safeguarded
+###  http://purl.org/deo#safeguarded
 :safeguarded rdf:type owl:Class ;
              rdfs:subClassOf :Process .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#scalable
+###  http://purl.org/deo#scalable
 :scalable rdf:type owl:Class ;
           rdfs:subClassOf :Requirement .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#secure
+###  http://purl.org/deo#secure
 :secure rdf:type owl:Class ;
         rdfs:subClassOf :Requirement .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#simulated
+###  http://purl.org/deo#simulated
 :simulated rdf:type owl:Class ;
            rdfs:subClassOf :State .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#societal
+###  http://purl.org/deo#societal
 :societal rdf:type owl:Class ;
           rdfs:subClassOf :State .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#steady
+###  http://purl.org/deo#steady
 :steady rdf:type owl:Class ;
         rdfs:subClassOf :Requirement .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#sustainable
+###  http://purl.org/deo#sustainable
 :sustainable rdf:type owl:Class ;
              rdfs:subClassOf :Requirement .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#territorial
+###  http://purl.org/deo#territorial
 :territorial rdf:type owl:Class ;
              rdfs:subClassOf :State .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#transparent
+###  http://purl.org/deo#transparent
 :transparent rdf:type owl:Class ;
              rdfs:subClassOf :Process .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#user_empowerment
+###  http://purl.org/deo#user_empowerment
 :user_empowerment rdf:type owl:Class ;
                   rdfs:subClassOf :Process .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#versatile
+###  http://purl.org/deo#versatile
 :versatile rdf:type owl:Class ;
            rdfs:subClassOf :Requirement .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#viable
+###  http://purl.org/deo#viable
 :viable rdf:type owl:Class ;
         rdfs:subClassOf :Requirement .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#virtual
+###  http://purl.org/deo#virtual
 :virtual rdf:type owl:Class ;
          rdfs:subClassOf :State .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Assessment&Diagnosis
-<http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Assessment&Diagnosis> rdf:type owl:Class ;
-                                                                                                            rdfs:subClassOf :Objective .
+###  http://purl.org/deo#Assessment&Diagnosis
+<http://purl.org/deo#Assessment&Diagnosis> rdf:type owl:Class ;
+                                           rdfs:subClassOf :Objective .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Business&Economics
-<http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Business&Economics> rdf:type owl:Class ;
-                                                                                                          rdfs:subClassOf :ApplicationDomain ;
-                                                                                                          rdfs:label "Business&Economics" .
+###  http://purl.org/deo#Business&Economics
+<http://purl.org/deo#Business&Economics> rdf:type owl:Class ;
+                                         rdfs:subClassOf :ApplicationDomain ;
+                                         rdfs:label "Business&Economics" .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Design&Development
-<http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Design&Development> rdf:type owl:Class ;
-                                                                                                          rdfs:subClassOf :Objective .
+###  http://purl.org/deo#Design&Development
+<http://purl.org/deo#Design&Development> rdf:type owl:Class ;
+                                         rdfs:subClassOf :Objective .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Education&Training
-<http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Education&Training> rdf:type owl:Class ;
-                                                                                                          rdfs:subClassOf :Objective .
+###  http://purl.org/deo#Education&Training
+<http://purl.org/deo#Education&Training> rdf:type owl:Class ;
+                                         rdfs:subClassOf :Objective .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Energy&Fuels
-<http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Energy&Fuels> rdf:type owl:Class ;
-                                                                                                    rdfs:subClassOf :ApplicationDomain ;
-                                                                                                    rdfs:label "Energy&Fuels" .
+###  http://purl.org/deo#Energy&Fuels
+<http://purl.org/deo#Energy&Fuels> rdf:type owl:Class ;
+                                   rdfs:subClassOf :ApplicationDomain ;
+                                   rdfs:label "Energy&Fuels" .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Hardware&Software
-<http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Hardware&Software> rdf:type owl:Class ;
-                                                                                                         rdfs:subClassOf <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Tool&Facility> .
+###  http://purl.org/deo#Hardware&Software
+<http://purl.org/deo#Hardware&Software> rdf:type owl:Class ;
+                                        rdfs:subClassOf <http://purl.org/deo#Tool&Facility> .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#LegalAffairs&Regulations
-<http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#LegalAffairs&Regulations> rdf:type owl:Class ;
-                                                                                                                rdfs:subClassOf :ApplicationDomain ;
-                                                                                                                rdfs:label "LegalAffairs&Regulations" .
+###  http://purl.org/deo#LegalAffairs&Regulations
+<http://purl.org/deo#LegalAffairs&Regulations> rdf:type owl:Class ;
+                                               rdfs:subClassOf :ApplicationDomain ;
+                                               rdfs:label "LegalAffairs&Regulations" .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Test&Experiment
-<http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Test&Experiment> rdf:type owl:Class ;
-                                                                                                       rdfs:subClassOf :Objective .
+###  http://purl.org/deo#Test&Experiment
+<http://purl.org/deo#Test&Experiment> rdf:type owl:Class ;
+                                      rdfs:subClassOf :Objective .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Tool&Facility
-<http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Tool&Facility> rdf:type owl:Class ;
-                                                                                                     rdfs:subClassOf :Component ;
-                                                                                                     rdfs:comment "Tools and facilities used in the DEs" .
+###  http://purl.org/deo#Tool&Facility
+<http://purl.org/deo#Tool&Facility> rdf:type owl:Class ;
+                                    rdfs:subClassOf :Component ;
+                                    rdfs:comment "Tools and facilities used in the DEs" .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Validation&Verification
-<http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Validation&Verification> rdf:type owl:Class ;
-                                                                                                               rdfs:subClassOf :Objective ,
-                                                                                                                               [ rdf:type owl:Restriction ;
-                                                                                                                                 owl:onProperty :isObjectiveOf ;
-                                                                                                                                 owl:someValuesFrom :DemonstrationPlant
-                                                                                                                               ] ,
-                                                                                                                               [ rdf:type owl:Restriction ;
-                                                                                                                                 owl:onProperty :isObjectiveOf ;
-                                                                                                                                 owl:someValuesFrom :PrototypePlant
-                                                                                                                               ] ,
-                                                                                                                               [ rdf:type owl:Restriction ;
-                                                                                                                                 owl:onProperty :isObjectiveOf ;
-                                                                                                                                 owl:someValuesFrom :PrototypingPlatform
-                                                                                                                               ] ,
-                                                                                                                               [ rdf:type owl:Restriction ;
-                                                                                                                                 owl:onProperty :isObjectiveOf ;
-                                                                                                                                 owl:someValuesFrom :Testbench
-                                                                                                                               ] ,
-                                                                                                                               [ rdf:type owl:Restriction ;
-                                                                                                                                 owl:onProperty :isObjectiveOf ;
-                                                                                                                                 owl:someValuesFrom [ rdf:type owl:Class ;
-                                                                                                                                                      owl:unionOf ( :PilotLine
-                                                                                                                                                                    :PilotPlant
-                                                                                                                                                                    :PilotScalePlant
-                                                                                                                                                                  )
-                                                                                                                                                    ]
-                                                                                                                               ] .
+###  http://purl.org/deo#Validation&Verification
+<http://purl.org/deo#Validation&Verification> rdf:type owl:Class ;
+                                              rdfs:subClassOf :Objective ,
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty :isObjectiveOf ;
+                                                                owl:someValuesFrom :DemonstrationPlant
+                                                              ] ,
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty :isObjectiveOf ;
+                                                                owl:someValuesFrom :PrototypePlant
+                                                              ] ,
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty :isObjectiveOf ;
+                                                                owl:someValuesFrom :PrototypingPlatform
+                                                              ] ,
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty :isObjectiveOf ;
+                                                                owl:someValuesFrom :Testbench
+                                                              ] ,
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty :isObjectiveOf ;
+                                                                owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                     owl:unionOf ( :PilotLine
+                                                                                                   :PilotPlant
+                                                                                                   :PilotScalePlant
+                                                                                                 )
+                                                                                   ]
+                                                              ] .
 
 
 ###  http://xmlns.com/foaf/0.1/Agent
@@ -2713,100 +2714,100 @@
 #    Individuals
 #################################################################
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Android
+###  http://purl.org/deo#Android
 :Android rdf:type owl:NamedIndividual .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#App_testbench
+###  http://purl.org/deo#App_testbench
 :App_testbench rdf:type owl:NamedIndividual ,
                         :Testbench ;
                :hasObjective :Malware_analysis .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Arduino
+###  http://purl.org/deo#Arduino
 :Arduino rdf:type owl:NamedIndividual ,
                   :PrototypingPlatform .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Citizen
+###  http://purl.org/deo#Citizen
 :Citizen rdf:type owl:NamedIndividual ,
                   :End-user .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#City
+###  http://purl.org/deo#City
 :City rdf:type owl:NamedIndividual ,
                :Real-lifeContext .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Converter
+###  http://purl.org/deo#Converter
 :Converter rdf:type owl:NamedIndividual ,
                     :ElectronicDevice .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Cyber-physical_hardware
+###  http://purl.org/deo#Cyber-physical_hardware
 :Cyber-physical_hardware rdf:type owl:NamedIndividual ,
-                                  <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Hardware&Software> .
+                                  <http://purl.org/deo#Hardware&Software> .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Cyber_security_testbed
+###  http://purl.org/deo#Cyber_security_testbed
 :Cyber_security_testbed rdf:type owl:NamedIndividual ,
                                  :Testbed ;
                         :hasObjective :Malware_analysis .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Demodulator
+###  http://purl.org/deo#Demodulator
 :Demodulator rdf:type owl:NamedIndividual ,
                       :ElectronicDevice .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Falcon_sandbox
+###  http://purl.org/deo#Falcon_sandbox
 :Falcon_sandbox rdf:type owl:NamedIndividual ,
                          :Sandbox ;
                 :hasObjective :Malware_analysis .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Gasifier
+###  http://purl.org/deo#Gasifier
 :Gasifier rdf:type owl:NamedIndividual ,
                    :Machinery .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Hobby_group
+###  http://purl.org/deo#Hobby_group
 :Hobby_group rdf:type owl:NamedIndividual ,
                       :Community .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#ICT_infrastructure
+###  http://purl.org/deo#ICT_infrastructure
 :ICT_infrastructure rdf:type owl:NamedIndividual ,
-                             <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Hardware&Software> .
+                             <http://purl.org/deo#Hardware&Software> .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#IOS
+###  http://purl.org/deo#IOS
 :IOS rdf:type owl:NamedIndividual .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Knowledge_creation
+###  http://purl.org/deo#Knowledge_creation
 :Knowledge_creation rdf:type owl:NamedIndividual ,
                              :Innovation .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Laboratory
+###  http://purl.org/deo#Laboratory
 :Laboratory rdf:type owl:NamedIndividual ,
                      :ModeledContext .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Local_housing_community
+###  http://purl.org/deo#Local_housing_community
 :Local_housing_community rdf:type owl:NamedIndividual ,
                                   :Community .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Machine_operator
+###  http://purl.org/deo#Machine_operator
 :Machine_operator rdf:type owl:NamedIndividual ,
                            :MachineOperator .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Malware_analysis
+###  http://purl.org/deo#Malware_analysis
 :Malware_analysis rdf:type owl:NamedIndividual ,
-                           <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Assessment&Diagnosis> ;
+                           <http://purl.org/deo#Assessment&Diagnosis> ;
                   :isObjectiveOf :App_testbench ,
                                  :Cyber_security_testbed ,
                                  :Falcon_sandbox ,
@@ -2815,137 +2816,137 @@
                   rdfs:comment "Malware analysis is the process of understanding behaviour and purpose of a suspicious file or URL." .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#NGOs
+###  http://purl.org/deo#NGOs
 :NGOs rdf:type owl:NamedIndividual ,
                :PublicOrganization .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Networking_application
+###  http://purl.org/deo#Networking_application
 :Networking_application rdf:type owl:NamedIndividual ,
-                                 <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Hardware&Software> .
+                                 <http://purl.org/deo#Hardware&Software> .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Nursing
+###  http://purl.org/deo#Nursing
 :Nursing rdf:type owl:NamedIndividual ,
                   :Healthcare .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Partnership
+###  http://purl.org/deo#Partnership
 :Partnership rdf:type owl:NamedIndividual ,
                       :collaborative .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Plant
+###  http://purl.org/deo#Plant
 :Plant rdf:type owl:NamedIndividual ,
                 :Semi-realisticContext .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Policy
+###  http://purl.org/deo#Policy
 :Policy rdf:type owl:NamedIndividual ,
                  :Solution .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Processor
+###  http://purl.org/deo#Processor
 :Processor rdf:type owl:NamedIndividual ,
                     :ElectronicDevice .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Proof-of-concept
+###  http://purl.org/deo#Proof-of-concept
 :Proof-of-concept rdf:type owl:NamedIndividual ,
-                           <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Validation&Verification> .
+                           <http://purl.org/deo#Validation&Verification> .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Raspberry_Pi
+###  http://purl.org/deo#Raspberry_Pi
 :Raspberry_Pi rdf:type owl:NamedIndividual ,
                        :Testbed ;
               :hasObjective :Malware_analysis .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Reactor
+###  http://purl.org/deo#Reactor
 :Reactor rdf:type owl:NamedIndividual ,
                   :Machinery .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Research_institution
+###  http://purl.org/deo#Research_institution
 :Research_institution rdf:type owl:NamedIndividual ,
                                :EducationalOrganization .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Resident
+###  http://purl.org/deo#Resident
 :Resident rdf:type owl:NamedIndividual ,
                    :End-user .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Robotics
+###  http://purl.org/deo#Robotics
 :Robotics rdf:type owl:NamedIndividual ,
                    :Machinery .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Sandbox
+###  http://purl.org/deo#Sandbox
 :Sandbox rdf:type owl:NamedIndividual ;
          :hasObjective :Malware_analysis .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Simulation
+###  http://purl.org/deo#Simulation
 :Simulation rdf:type owl:NamedIndividual ,
                      :ModeledContext .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Software_developer
+###  http://purl.org/deo#Software_developer
 :Software_developer rdf:type owl:NamedIndividual ,
                              :Developer .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Steam_generator
+###  http://purl.org/deo#Steam_generator
 :Steam_generator rdf:type owl:NamedIndividual ,
                           :Machinery .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Student
+###  http://purl.org/deo#Student
 :Student rdf:type owl:NamedIndividual ,
                   :End-user .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Suspicious_behavior_detection
+###  http://purl.org/deo#Suspicious_behavior_detection
 :Suspicious_behavior_detection rdf:type owl:NamedIndividual ,
-                                        <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Assessment&Diagnosis> .
+                                        <http://purl.org/deo#Assessment&Diagnosis> .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#ToR-SIM_platform
+###  http://purl.org/deo#ToR-SIM_platform
 :ToR-SIM_platform rdf:type owl:NamedIndividual ,
                            :PrototypingPlatform ;
                   :hasObjective :Malware_analysis .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#University
+###  http://purl.org/deo#University
 :University rdf:type owl:NamedIndividual ,
                      :EducationalOrganization ,
                      :Real-lifeContext .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Viability_demonstration
+###  http://purl.org/deo#Viability_demonstration
 :Viability_demonstration rdf:type owl:NamedIndividual ,
-                                  <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Validation&Verification> .
+                                  <http://purl.org/deo#Validation&Verification> .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Vulnerability_assessment
+###  http://purl.org/deo#Vulnerability_assessment
 :Vulnerability_assessment rdf:type owl:NamedIndividual ,
-                                   <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Assessment&Diagnosis> .
+                                   <http://purl.org/deo#Assessment&Diagnosis> .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Wire_cutter
+###  http://purl.org/deo#Wire_cutter
 :Wire_cutter rdf:type owl:NamedIndividual ,
                       :ElectronicDevice .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Wireless_communication
+###  http://purl.org/deo#Wireless_communication
 :Wireless_communication rdf:type owl:NamedIndividual ,
-                                 <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Hardware&Software> .
+                                 <http://purl.org/deo#Hardware&Software> .
 
 
-###  http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#commissioning
+###  http://purl.org/deo#commissioning
 :commissioning rdf:type owl:NamedIndividual ,
-                        <http://www.semanticweb.org/weinie/ontologies/2020/5/DemonstrationEnvironmentOntology#Test&Experiment> .
+                        <http://purl.org/deo#Test&Experiment> .
 
 
 #################################################################
